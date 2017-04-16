@@ -24,7 +24,7 @@
 }
 
 .center-cropped img {
-    
+
 }
 
 .thumbnail:hover {
@@ -161,3 +161,7 @@ footer {
   to { opacity: 0; }
 }
 
+
+.col-xs-3:last-child {
+    border-left: 1px solid #ccc;
+}
