@@ -1,0 +1,45 @@
+<div class="loading text-muted" ng-hide="lists">
+  <fa name="spinner" size="5" spin></fa><br>Loading resources&hellip;</div>
+<div class="row">
+  <div class="col-lg-10 col-lg-offset-1">
+    <div class="ibox">
+      <h4 class="text-center m">
+                {{exhibition}}
+            </h4>
+      <div class="ibox-title">
+        {{ list.title }}
+      </div>
+      <slick>
+
+        <div ng-repeat="(id, list) in lists">
+
+            <div class="ibox-content">
+
+              <p >
+                <img  ng-if="list.thumbnail" class="highlights-image" ng-src="{{ list.thumbnail }}" alt="Thumbnail for {{ list.title }}">
+              </p>
+
+                <h2>{{ list.title }}</h2>
+            </div>
+
+        </div>
+
+
+      </slick>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function() {
+    $('.slick').slick({
+      infinite: true,
+      speed: 500,
+      fade: true,
+      cssEase: 'linear',
+      adaptiveHeight: true
+    });
+
+
+
+  });
+</script>

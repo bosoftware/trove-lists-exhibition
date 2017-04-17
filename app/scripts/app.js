@@ -18,10 +18,13 @@ var app = angular.module('trovelistsApp', [
     'picardy.fontawesome',
     'truncate',
     'infinite-scroll',
-    'masonry'
+    'masonry',
+    'slick',
+    'ngDialog'
   ]);
 
-app.config(function ($routeProvider) {
+app.config(function ($routeProvider,$sceDelegateProvider) {
+  $sceDelegateProvider.resourceUrlWhitelist(['**']);
   $routeProvider
     .when('/', {
       templateUrl: 'views/main.html',
@@ -53,12 +56,17 @@ app.config(function ($routeProvider) {
       controller: 'ItemCtrl',
       controllerAs: 'ic'
     })
+    .when('/highlights/', {
+      templateUrl: 'views/highlights.html',
+      controller: 'HighlightsCtrl',
+      controllerAs: 'hc'
+    })
     .otherwise({
       redirectTo: '/'
     });
   });
 
-app.controller('BaseCtrl', function($scope, $document, $location) {
+app.controller('BaseCtrl', function($scope, $document, $location,$compile,ngDialog) {
   $document.scrollTop(0);
   if (typeof $scope.exhibition === 'undefined') {
     $scope.listHide = true;
@@ -71,9 +79,14 @@ app.controller('BaseCtrl', function($scope, $document, $location) {
     $scope.exhibition = angular.element('#exhibition-name').html();
     $scope.tagline = angular.element('#exhibition-tagline').html();
     $scope.description = angular.element('#exhibition-description').html();
+    $scope.modeldescription = angular.element('#exhibition-model-description').html();
     $scope.credit = angular.element('#exhibition-credit').html();
+    $scope.highlights = angular.element('#exhibition-highlights').html();
     $scope.listLinks = angular.element('.list-link');
     $scope.config = window.config;
+    $scope.clickToOpen = function () {
+        ngDialog.open({ template: 'views/highlights.html', className: 'ngdialog-theme-default' });
+    };
   }
 });
 
@@ -129,7 +142,7 @@ app.factory('ListsDataFactory', function($rootScope, $document, $http) {
               if (typeof link.linktext !== 'undefined') {
                 item.linktext = link.linktext;
               }
-            } 
+            }
           });
         } else if (itemType === 'externalWebsite') {
           item.type = 'website';
@@ -145,7 +158,7 @@ app.factory('ListsDataFactory', function($rootScope, $document, $http) {
           item.type = 'people';
         }
       });
-      if (item.type !== 'people') { 
+      if (item.type !== 'people') {
         items.push(item);
         order++;
       }
@@ -189,7 +202,7 @@ console.log(items);
       items = processListItems(listDetails[1], order, items);
       lists.push(listDetails[0]);
       order++;
-    }); 
+    });
     $rootScope.items = items;
     $rootScope.lists = lists;
   };

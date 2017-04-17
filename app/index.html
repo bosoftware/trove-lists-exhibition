@@ -1,144 +1,199 @@
 <!doctype html>
 <html ng-app="trovelistsApp" ng-controller="BaseCtrl">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ exhibition }} -- {{ tagline }}</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="styles/theme.css">
-    <link rel="stylesheet" href="styles/style.css">
-  </head>
-  <body>
-    <!--[if lte IE 8]>
+<head>
+  <meta charset="utf-8">
+  <title>{{ exhibition }} -- {{ tagline }}</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles/theme.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog.min.css">
+  <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
+  <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css">
+  <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css">
+</head>
+
+<body>
+  <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="row">
-          <div class="navbar-header col-xs-3">
+  <!-- Add your site or application content here -->
+  <div class="header">
+    <div class="navbar navbar-default" role="navigation">
+      <div class="container">
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+        <div class="navbar-header col-xs-3">
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
               <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
+
             </button>
 
-            <a class="navbar-brand" href="#/">{{ exhibition }}</a>
-          </div>
+          <a class="navbar-brand" href="#/">{{ exhibition }}</a>
+        </div>
 
-          <div class="collapse navbar-collapse col-xs-3" id="js-navbar-collapse">
+        <div class="collapse navbar-collapse col-xs-3" id="js-navbar-collapse">
 
-            <ul class="nav navbar-nav">
-              <li ng-class="{ active: isActive('/') }"><a href="#/">Home</a></li>
-              <li ng-class="{ active: isActive('/featured/') }"><a ng-href="#/featured/">Featured</a></li>
-              <li ng-class="{ active: isActive('/resources/') }"><a ng-href="#/resources/">Resources</a></li>
-            </ul>
-          </div>
-          <div class="nav navbar-nav col-xs-3 pull-right">
+          <ul class="nav navbar-nav">
+            <li ng-class="{ active: isActive('/') }"><a href="#/">Home</a></li>
+            <li ng-class="{ active: isActive('/topics/') }"><a ng-href="#/topics/">Featured</a></li>
+            <li ng-class="{ active: isActive('/resources/') }"><a ng-href="#/resources/">Resources</a></li>
+          </ul>
+        </div>
+        <div class="nav navbar-nav col-xs-3 pull-right">
 
-            <a href="#" id="grid" class="btn btn-default btn-lg"><span
+          <a href="#" id="grid" class="btn btn-default btn-lg"><span
                             class="glyphicon glyphicon-th-large"></span></a>
 
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- EDIT THIS SECTION TO INCLUDE YOUR EXHIBITION DETAILS -->
+    <h1 ng-hide="listHide" class="ng-hide" id="exhibition-name" class="page-header">The Shell</h1>
+    <h2 ng-hide="listHide" class="ng-hide" id="exhibition-tagline">An assortment of weather prophets</h2>
+    <div ng-hide="listHide" class="ng-hide" id="exhibition-description">
+      <p>This site displays content from Trove. It is a demonstration of how resources collected using <a href="http://help.nla.gov.au/trove/using-trove/creating-contributing/lists">Trove lists</a> can be reused through the <a href="http://help.nla.gov.au/trove/building-with-trove">Trove API</a>        to create new interfaces and applications.</p>
+    </div>
+    <div ng-hide="listHide" class="ng-hide" id="exhibition-highlights">
+      <h4>EXHIBITION HIGHLIGHTS</h4>
+    </div>
+    <div ng-hide="listHide" class="ng-hide" id="exhibition-credit">
+      <p><a>The Sell: Australian Advertising 1790s to 1990s</a></p>
+      <p>National Library of Australia, Canberra</p>
+      <p>23rd Novemeber 2016 to 25th April 2017</p>
+    </div>
+    <ul ng-hide="listHide" class="ng-hide" id="lists">
+      <!-- CHANGE THIS TO LIST THE TROVE LISTS THAT MAKE UP YOUR EXHIBITION -->
+      <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92589">Minties</a></li>
+         <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92672">Vegemite</a></li>
+         <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92583">Jantzen</a></li>
+         <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92603">Bile Beans</a></li>
+         <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92585">Stamina trousers</a></li>
+
+    </ul>
+    <div ng-hide="listHide" class="ng-hide" id="exhibition-model-description">
+      <p>Step back in time, into the ads of Australia's past. This exhibition showcases our rich collections of Australian advertising and explores the messages behind many iconic and long forgotten ads.</p>
+    </div>
+    <script>
+      // ADD YOUR TROVE API KEY
+      var troveAPIKey = "l2pksu1ctrtkd1bg";
+      var config = {};
+      config.listSnippet = 50;
+      config.directLinks = true;
+      config.showGrid = true;
+    </script>
+    <!-- END OF YOUR DETAILS -->
+
+    <div class="view-container">
+      <div ng-view="" class="view-frame"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container text-muted">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>Visit the exhibition</h1>
+          <div ng-bind-html="credit"></div>
+        </div>
+        <div class="col-md-4 col-md-offset-2">
+          <img src="images/trove_logo.png" class="pull-right">
+          <h3>Powered by <a href="http://trove.nla.gov.au">Trove</a></h3>
+        </div>
+      </div>
+  </footer>
+
+
+
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/angular-fontawesome/dist/angular-fontawesome.js"></script>
+  <script src="bower_components/angular-truncate/src/truncate.js"></script>
+  <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+  <script src="bower_components/get-style-property/get-style-property.js"></script>
+  <script src="bower_components/get-size/get-size.js"></script>
+  <script src="bower_components/eventie/eventie.js"></script>
+  <script src="bower_components/doc-ready/doc-ready.js"></script>
+  <script src="bower_components/eventEmitter/EventEmitter.js"></script>
+  <script src="bower_components/matches-selector/matches-selector.js"></script>
+  <script src="bower_components/fizzy-ui-utils/utils.js"></script>
+  <script src="bower_components/outlayer/item.js"></script>
+  <script src="bower_components/outlayer/outlayer.js"></script>
+  <script src="bower_components/masonry/masonry.js"></script>
+  <script src="bower_components/imagesloaded/imagesloaded.js"></script>
+  <script src="bower_components/angular-masonry-directive/src/angular-masonry-directive.js"></script>
+  <script src="bower_components/slick-carousel/slick/slick.min.js"></script>
+  <script src="bower_components/angular-slick/dist/slick.js"></script>
+  <script src="bower_components/ng-dialog/js/ngDialog.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+  <script src="scripts/controllers/lists.js"></script>
+  <script src="scripts/controllers/list.js"></script>
+  <script src="scripts/controllers/items.js"></script>
+  <script src="scripts/controllers/item.js"></script>
+  <script src="scripts/controllers/highlights.js"></script>
+  <!-- endbuild -->
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"> {{exhibition}}</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row no-gutters">
+            <div class="col-12 col-sm-6 col-md-8">
+              <div ng-bind-html="modeldescription"></div>
+            </div>
+            <div class="col-6 col-md-4">
+              <div ng-bind-html="highlights"></div>
+              <div>
+                <a id="highlights-click" ng-click="clickToOpen()" ><span class="glyphicon glyphicon-arrow-right"></span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
 
           </div>
         </div>
       </div>
-      </div>
     </div>
-
-    <div class="container">
-
-      <!-- EDIT THIS SECTION TO INCLUDE YOUR EXHIBITION DETAILS -->
-      <h1 ng-hide="listHide" class="ng-hide" id="exhibition-name" class="page-header">The Shell</h1>
-      <h2 ng-hide="listHide" class="ng-hide" id="exhibition-tagline">An assortment of weather prophets</h2>
-      <div ng-hide="listHide" class="ng-hide" id="exhibition-description">
-        <p>This site displays content from Trove. It is a demonstration of how resources collected using <a href="http://help.nla.gov.au/trove/using-trove/creating-contributing/lists">Trove lists</a> can be reused through the <a href="http://help.nla.gov.au/trove/building-with-trove">Trove API</a> to create new interfaces and applications.</p>
-      </div>
-      <div ng-hide="listHide" class="ng-hide" id="exhibition-credit">
-        <p><a>The Sell: Australian Advertising 1790s to 1990s</a></p>
-        <p>National Library of Australia, Canberra</p>
-        <p>23rd Novemeber 2016 to 25th April 2017</p>
-      </div>
-      <ul ng-hide="listHide" class="ng-hide" id="lists">
-        <!-- CHANGE THIS TO LIST THE TROVE LISTS THAT MAKE UP YOUR EXHIBITION -->
-        <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92589">A day in the life of Mr Mares, weatherman</a></li>
-        
-      </ul>
-      <script>
-        // ADD YOUR TROVE API KEY
-        var troveAPIKey = "l2pksu1ctrtkd1bg";
-        var config = {};
-        config.listSnippet = 50;
-        config.directLinks = true;
-        config.showGrid = true;
-      </script>
-      <!-- END OF YOUR DETAILS -->
-
-      <div class="view-container">
-        <div ng-view="" class="view-frame"></div>
-      </div>
-    </div>
-
-    <footer>
-      <div class="container text-muted">
-        <div class="row">
-          <div class="col-md-6">
-            <h1>Visit the exhibition</h1>
-            <div ng-bind-html="credit"></div>
-          </div>
-          <div class="col-md-4 col-md-offset-2">
-            <img src="images/trove_logo.png" class="pull-right">
-            <h3>Powered by <a href="http://trove.nla.gov.au">Trove</a></h3>
-
-          </div>
-      </div>
-    </footer>
-
-
-
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/angular-fontawesome/dist/angular-fontawesome.js"></script>
-    <script src="bower_components/angular-truncate/src/truncate.js"></script>
-    <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
-    <script src="bower_components/get-style-property/get-style-property.js"></script>
-    <script src="bower_components/get-size/get-size.js"></script>
-    <script src="bower_components/eventie/eventie.js"></script>
-    <script src="bower_components/doc-ready/doc-ready.js"></script>
-    <script src="bower_components/eventEmitter/EventEmitter.js"></script>
-    <script src="bower_components/matches-selector/matches-selector.js"></script>
-    <script src="bower_components/fizzy-ui-utils/utils.js"></script>
-    <script src="bower_components/outlayer/item.js"></script>
-    <script src="bower_components/outlayer/outlayer.js"></script>
-    <script src="bower_components/masonry/masonry.js"></script>
-    <script src="bower_components/imagesloaded/imagesloaded.js"></script>
-    <script src="bower_components/angular-masonry-directive/src/angular-masonry-directive.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/lists.js"></script>
-        <script src="scripts/controllers/list.js"></script>
-        <script src="scripts/controllers/items.js"></script>
-        <script src="scripts/controllers/item.js"></script>
-        <!-- endbuild -->
+    <!-- /.modal -->
 </body>
+<script>
+  $('#myModal').modal();
+
+  $('#highlights-click').click(function(e){
+    $('#myModal').modal('hide');
+    //$('#myModal').html($compile('<div ng-include=\'views/highlights.html\'></div>'));
+    //clickToOpen();
+  });
+</script>
+
 </html>

@@ -18,12 +18,13 @@ angular.module('trovelistsApp')
             function successCallback(responses) {
               ListsDataFactory.loadResources(responses);
             },
-            function errorCallback() {
+            function errorCallback(response) {
               if (tries < 1) {
                 tries++;
                 loadListData();
               } else {
                 //$rootScope.listHide = false;
+                
                 $rootScope.failed = true;
               }
             }
