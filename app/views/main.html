@@ -1,45 +1,106 @@
-<div class="row">
-  <div class="col-xs-12 title-block">
-    <h1 class="pagehead">{{ exhibition }}<small ng-if="tagline"> {{ tagline }}</small></h1>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <p class="lead" ng-if="description" ng-bind-html="description"></p>
-    <div class="loading text-muted" ng-hide="lists.length > 0 || failed"><fa name="spinner" size="5" spin></fa><br>Loading resources&hellip;</div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-7" ng-if="lists">
-    <h3>Topics</h3>
-    <div class="media" ng-repeat="(id, list) in lists">
-      <div class="media-left">
-        <a ng-href="#/topics/{{ list.order }}">
-          <img ng-if="list.thumbnail" class="thumbnail media-object center-cropped" ng-src="{{ list.thumbnail }}" alt="Thumbnail for {{ list.title }}">
-          <div ng-if="!list.thumbnail" class="thumbnail media-object center-cropped"><fa class="blank-icon" name="list" size="4"></fa></div>
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">{{ list.title }}</h4>
-        <div ng-if="list.description" ng-bind-html="list.description | words:config.listSnippet"></div>
-        <a ng-href="#/topics/{{ list.order }}">Browse {{ list.numberOfItems}} items</a>
-      </div>
+<main>
+  <link rel="stylesheet" href="css/index.css">
+  <div class="slideshow-container">
+    <div id="header">
+      <ul>
+        <li>
+          <a href="#0" class="popup-description-trigger"><img border="0" alt="Information icon" src="img/icon_info.png" width="100%" height="100%" align="middle">INFORMATION</a>
+        </li>
+
+        <li><a href="#0" class="popup-highlights-trigger">{{highlights}}<img border="0" alt="Exhibtiion Highlights icon" src="img/icon_museum.png" width="100%" height="100%" align="middle"></a></li>
+      </ul>
     </div>
+
+    <div class="homeSlides" ng-repeat="(id, list) in lists">
+      <img ng-if="list.thumbnail" height="100%" width="100%" ng-src="{{ list.thumbnail }}" alt="Thumbnail for {{ list.title }}">
+      <div ng-if="!list.thumbnail" height="100%" width="100%">
+        <fa class="blank-icon" name="list" size="4"></fa>
+      </div>
+      <div class="slide-caption"></div>
+
+
+    </div>
+
+
+
   </div>
-  <div class="col-md-4 col-md-offset-1" ng-if="items">
-  <h3>Resources</h3>
-  <div class="clearfix">
-    <a ng-href="#/resources/{{ item.order }}" class="pull-left" ng-repeat="item in items | itemsWithThumbnails | orderBy:'rank' | limitTo:12" title="{{ item.title }}">
-      <img class="thumbnail center-cropped" ng-src="{{ item.thumbnail }}" alt="Thumbnail for {{ item.title }}">
-    </a>
+
+  <div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
   </div>
-  <p><a href="#/resources/">Browse all {{ items.length }} resources</a></p>
-  </div>
-  <div class="col-md-12" ng-show="failed">
-  <p>There was a problem loading this exhibition. You can still browse the content on Trove:
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="js/popup_main.js"></script>
+  <script type="text/javascript" src="js/slideshow.js"></script>
+
+
+</main>
+
+<div class="base-nav">
   <ul>
-    <li ng-repeat="link in listLinks"><a href=" {{ link.href }}">{{ link.text }} <fa name="external-link"></fa></a></li>
+    <li class="primary-close"><a href="#">THE SELL</a></li>
+
+    <li id="base-nav-featured"><a href="#">FEATURED</a></li>
+    <li id="base-nav-resources"><a href="#">RESOURCES</a></li>
+    <li>
+      <!-- EMPTY DIV FOR GREY LINE -->
+    </li>
+    <li>
+      <a class="grid-trigger" href="#0">
+        <img src="img/icon-trigger.png" width="100%" height="100%" /></a>
+    </li>
+    <!-- primary exhibition trigger -->
   </ul>
-  <p>You can also try <a href="#/reload/">reloading</a> this exhibition.</p> 
+</div>
+<div class="popup-description" role="alert">
+  <div class="popup-description-container">
+    <h1>{{exhibition}}</h1>
+    <p>{{description}}</p>
+    <div id="ex_high">
+      <a href="#" class="exhigh-trigger">
+        <center>{{highlights}}</center>
+        <img src="img/icon_arrow.png" height="40px" width="84px"></a>
+    </div>
+    <img class="popup-description-close" src="img/icon_close.png" height="100%" width="100%" />
   </div>
 </div>
+
+
+<!-- POPUP FOR EXHIBITION HIGHLIGHTS BELOW -->
+<div class="popup-highlights" role="alert">
+  <div class="popup-highlights-container">
+    <div id="highlights-header">
+      <div id="highlights-title">HIGHLIGHTS</div>
+      <img class="popup-highlights-close" src="img/icon_close.png" height="100%" width="100%" />
+    </div>
+
+    <!-- ADD THE YOUR HIGHLIGHT IMAGES AND DESCRIPTIONS HERE -->
+    <div class="highlights-slider-container">
+      <div id="highlights-slider">
+        <div class="highSlides" ng-repeat="(id, list) in lists">
+          <div class="numbertext">1 / 5</div>
+          <img ng-src="{{ list.thumbnail }}" height="100%" width="100%">
+          <div class="highSlides-caption">{{ list.title }}</div>
+        </div>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)"><img src="img/icon_previous.png" /> previous</a>
+      <a class="next" onclick="plusSlides(1)">next <img src="img/icon_next.png"/></a>
+    </div>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+    <script src="js/high_slideshow.js"></script>
+  </div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/popup_main.js"></script>
+<!-- Resource jQuery -->
+<!--    POP UP FOR THE EXHIBITION DESCRIPTION    -->

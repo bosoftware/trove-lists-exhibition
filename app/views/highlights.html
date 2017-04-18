@@ -1,34 +1,63 @@
-<div class="loading text-muted" ng-hide="lists">
-  <fa name="spinner" size="5" spin></fa><br>Loading resources&hellip;</div>
+<!-- POPUP FOR EXHIBITION HIGHLIGHTS BELOW -->
 
-      <slick>
+<div class="popup-highlights" role="alert">
+<div class="popup-highlights-container">
+    <div id="highlights-header">
+        <div id="highlights-title">HIGHLIGHTS</div>
+        <img class="popup-highlights-close" src="img/icon_close.png" height="100%" width="100%"/>
+    </div>
 
-        <div ng-repeat="(id, list) in lists">
+<!-- ADD THE YOUR HIGHLIGHT IMAGES AND DESCRIPTIONS HERE -->
+    <div class="highlights-slider-container">
+      <div id="highlights-slider">
+        <div class="highSlides">
+    <div class="numbertext">1 / 5</div>
+       <img src="img/high_1.jpg" height="100%" width="100%">
+             <div class="highSlides-caption">Albert Francis Lenertz, Aeroplane Jelly Song 1953–1960s, nla.cat-vn3885655, courtesy of McCormick Foods Australia Pty Ltd</div>
+    </div>
 
-            <div >
+        <div class="highSlides">
+    <div class="numbertext">2 / 5</div>
+    <img src="img/high_2.jpg" height="100%" width="100%">
+    <div class="highSlides-caption">Walter Jardine (artist, 1884–1970) Stamina trousers: for pleasure in leisure 1953, offset colour lithograph, nla.obj-39257959, courtesy of the Estate of Walter Jardine</div>
+  </div>
 
+  <div class="highSlides">
+    <div class="numbertext">3 / 5</div>
+    <img src="img/high_3.jpg" height="100%" width="100%">
+    <div class="highSlides-caption">Henderson’s Honey Kisses c. 1903, chromolithograph, nla.obj-124660481
+          </div>
+  </div>
 
-                <img  ng-if="list.thumbnail" class="highlights-image" ng-src="{{ list.thumbnail }}" alt="Thumbnail for {{ list.title }}">
+  <div class="highSlides">
+    <div class="numbertext">4 / 5</div>
+    <img src="img/high_4.jpg" height="100%" width="100%">
+    <div class="highSlides-caption">Alexander Stitt (1937–2016), Life. Be in it. Canberra: A.G.P.S. 1977, screenprint, nla.cat-vn7124960, courtesy of Alexander Stitt</div>
+  </div>
 
-                <h2>{{ list.title }}</h2>
-            </div>
-
+  <div class="highSlides">
+    <div class="numbertext">5 / 5</div>
+    <img src="img/high_5.jpg" height="100%" width="100%">
+    <div class="highSlides-caption">Sander & Sons, Bendigo Examples of advertising from Records of Sander and Sons (Manuscripts)</div>
+  </div>
         </div>
 
+  <a class="prev" onclick="plusSlides(-1)"><img src="img/icon_previous.png"/> previous</a>
+  <a class="next" onclick="plusSlides(1)">next <img src="img/icon_next.png"/></a>
+</div>
 
-      </slick>
-  
-<script>
-  $(document).ready(function() {
-    $('.slick').slick({
-      infinite: true,
-      speed: 500,
-      fade: true,
-      cssEase: 'linear',
-      adaptiveHeight: true
-    });
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/popup_main.js"></script> <!-- Resource jQuery -->
+    <script src="js/high_slideshow.js"></script>
+</div>
+</div>
 
 
-
-  });
-</script>
+    <!--    POP UP FOR THE EXHIBITION DESCRIPTION    -->
