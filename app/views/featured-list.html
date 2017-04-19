@@ -1,0 +1,53 @@
+<div class="loading text-muted" ng-hide="lists"><fa name="spinner" size="5" spin></fa><br>Loading resources&hellip;</div>
+            <!-- FEATURED INFORMATION -->
+<div class="featured">
+    <div id="featured-header">
+        <h1>FEATURED</h1>
+        <ul class="featured-header-icons">
+            <li>
+                <button class="featured-grid">
+                    <img id="button-icon-grid" src="img/icon_grid-black.png" height="100%" width="100%">
+                </button>
+            </li>
+
+            <li>
+                <button class="featured-list">
+                    <img id="button-icon-list"
+                        src="img/icon-list.png" height="100%" width="100%">
+                </button>
+            </li>
+        </ul>
+    </div>
+
+
+<div id="featured-list-container">
+    <ul class="featured-grid">
+        <li ng-repeat="(id, list) in lists">
+            <div class="featured-grid-thumbnail">
+              <img ng-if="list.thumbnail" style='max-height: 100%; width: 100%; margin: auto; display: block;' ng-src="{{ list.thumbnail }}" alt="Thumbnail for {{ list.title }}">
+            </div>
+            <div class="featured-grid-title">{{ list.title }}</div>
+            <div class="featured-grid-number">{{$index}}</div>
+            <div class="featured-grid-description">
+                <p>{{list.description}} </p>
+            </div>
+        </li>
+
+    </ul>
+</div>
+
+<script src="js/grid-list-view.js"></script>
+
+    <div id="featured-footer">
+        <div id="featured-footer-main">
+            <h1>Visit the Exhibition</h1>
+            <a href="https://www.nla.gov.au/exhibitions/the-sell">The Sell: Australian Advertising 1790s to 1990s</a>
+            <p>National Library Australia, Canberra</p>
+            <p>23rd November 2016 to 25th April 2017</p>
+        </div>
+        <div id="featured-footer-secondary">
+            <a href="http://trove.nla.gov.au/"><img src="img/icon_logo.png"/></a>
+            <h3>Powered by <a href="http://trove.nla.gov.au/">Trove</a></h3>
+        </div>
+    </div>
+</div>

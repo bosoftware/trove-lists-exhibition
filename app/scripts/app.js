@@ -61,6 +61,11 @@ app.config(function ($routeProvider,$sceDelegateProvider) {
       controller: 'HighlightsCtrl',
       controllerAs: 'hc'
     })
+    .when('/featured/', {
+      templateUrl: 'views/featured-list.html',
+      controller: 'ListsCtrl',
+      controllerAs: 'lc'
+    })
     .otherwise({
       redirectTo: '/'
     });

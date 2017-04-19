@@ -9,81 +9,60 @@
 
 
   <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body id="body" ontouchmove="BlockMove(event);">
 
+  <div class="container">
 
-<div class="container">
+    <!-- EDIT THIS SECTION TO INCLUDE YOUR EXHIBITION DETAILS -->
+    <h1 ng-hide="listHide" class="ng-hide" id="exhibition-name" class="page-header">The Shell</h1>
+    <h2 ng-hide="listHide" class="ng-hide" id="exhibition-tagline">An assortment of weather prophets</h2>
+    <div ng-hide="listHide" class="ng-hide" id="exhibition-description">
+      Step back in time, into the ads of Australia's past. Ephemeral by nature, often lasting in impact, advertising surrounds us. It aims to inform us and influence how we live, what we buy and how we spend our leisure time. It may not reflect our reality, yet it can affect how we remember the past. Through highlights from the Library’s vast collections, this exhibition explores how Australian advertising has used words, images and sound to inform and persuade. It traces how advertising has evolved as society and technology have changed, asking what it reveals about the everyday lives of Australians from the 1790s to the 1990s.
+    </div>
+    <div ng-hide="listHide" class="ng-hide" id="exhibition-highlights">
+      EXHIBITION HIGHLIGHTS
+    </div>
+    <div ng-hide="listHide" class="ng-hide" id="exhibition-credit">
+      <p><a>The Sell: Australian Advertising 1790s to 1990s</a></p>
+      <p>National Library of Australia, Canberra</p>
+      <p>23rd Novemeber 2016 to 25th April 2017</p>
+    </div>
+    <ul ng-hide="listHide" class="ng-hide" id="lists">
+      <!-- CHANGE THIS TO LIST THE TROVE LISTS THAT MAKE UP YOUR EXHIBITION -->
+      <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92589">Minties</a></li>
+         <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92672">Vegemite</a></li>
+         <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92583">Jantzen</a></li>
+         <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92603">Bile Beans</a></li>
+         <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92585">Stamina trousers</a></li>
 
-  <!-- EDIT THIS SECTION TO INCLUDE YOUR EXHIBITION DETAILS -->
-  <h1 ng-hide="listHide" class="ng-hide" id="exhibition-name" class="page-header">The Shell</h1>
-  <h2 ng-hide="listHide" class="ng-hide" id="exhibition-tagline">An assortment of weather prophets</h2>
-  <div ng-hide="listHide" class="ng-hide" id="exhibition-description">
-    <p>Step back in time, into the ads of Australia's past. Ephemeral by nature, often lasting in impact, advertising surrounds us. It aims to inform us and influence how we live, what we buy and how we spend our leisure time. It may not reflect our reality, yet it can affect how we remember the past. Through highlights from the Library’s vast collections, this exhibition explores how Australian advertising has used words, images and sound to inform and persuade. It traces how advertising has evolved as society and technology have changed, asking what it reveals about the everyday lives of Australians from the 1790s to the 1990s.</p>
+    </ul>
+    <div ng-hide="listHide" class="ng-hide" id="exhibition-model-description">
+      <p>Step back in time, into the ads of Australia's past. This exhibition showcases our rich collections of Australian advertising and explores the messages behind many iconic and long forgotten ads.</p>
+    </div>
+    <script>
+      // ADD YOUR TROVE API KEY
+      var troveAPIKey = "cg6sn8lpjp7o8q19";
+      var config = {};
+      config.listSnippet = 50;
+      config.directLinks = true;
+      config.showGrid = true;
+    </script>
+    <!-- END OF YOUR DETAILS -->
+
+    <div class="view-container">
+      <div ng-view="" class="view-frame"></div>
+    </div>
   </div>
-  <div ng-hide="listHide" class="ng-hide" id="exhibition-highlights">
-    EXHIBITION HIGHLIGHTS
-  </div>
-  <div ng-hide="listHide" class="ng-hide" id="exhibition-credit">
-    <p><a>The Sell: Australian Advertising 1790s to 1990s</a></p>
-    <p>National Library of Australia, Canberra</p>
-    <p>23rd Novemeber 2016 to 25th April 2017</p>
-  </div>
-  <ul ng-hide="listHide" class="ng-hide" id="lists">
-    <!-- CHANGE THIS TO LIST THE TROVE LISTS THAT MAKE UP YOUR EXHIBITION -->
-    <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92589">Minties</a></li>
-       <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92672">Vegemite</a></li>
-       <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92583">Jantzen</a></li>
-       <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92603">Bile Beans</a></li>
-       <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92585">Stamina trousers</a></li>
-
-  </ul>
-  <div ng-hide="listHide" class="ng-hide" id="exhibition-model-description">
-    <p>Step back in time, into the ads of Australia's past. This exhibition showcases our rich collections of Australian advertising and explores the messages behind many iconic and long forgotten ads.</p>
-  </div>
-  <script>
-    // ADD YOUR TROVE API KEY
-    var troveAPIKey = "cg6sn8lpjp7o8q19";
-    var config = {};
-    config.listSnippet = 50;
-    config.directLinks = true;
-    config.showGrid = true;
-  </script>
-  <!-- END OF YOUR DETAILS -->
-
-  <div class="view-container">
-    <div ng-view="" class="view-frame"></div>
-  </div>
-</div>
-
-
 <section class="main"></section>
 
 
-<div class="base-nav">
-  <ul>
-    <li class="primary-close"><a href="#">THE SELL</a></li>
-
-    <li id="base-nav-featured"><a href="#">FEATURED</a></li>
-    <li id="base-nav-resources"><a href="#">RESOURCES</a></li>
-    <li>
-      <!-- EMPTY DIV FOR GREY LINE -->
-    </li>
-    <li>
-      <a class="grid-trigger" href="#0">
-        <img src="img/icon-trigger.png" width="100%" height="100%" /></a>
-    </li>
-    <!-- primary exhibition trigger -->
-  </ul>
-</div>
 
 <!-- build:js(.) scripts/vendor.js -->
 <!-- bower:js -->
-<!-- <script src="bower_components/jquery/dist/jquery.js"></script> -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/popup_main.js"></script>
-<!-- <script src="js/jquery-2.1.1.js"></script> -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -95,29 +74,21 @@
 <script src="bower_components/angular-fontawesome/dist/angular-fontawesome.js"></script>
 <script src="bower_components/angular-truncate/src/truncate.js"></script>
 <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
-<script src="bower_components/get-style-property/get-style-property.js"></script>
 <script src="bower_components/get-size/get-size.js"></script>
-<script src="bower_components/eventie/eventie.js"></script>
-<script src="bower_components/doc-ready/doc-ready.js"></script>
-<script src="bower_components/eventEmitter/EventEmitter.js"></script>
-<script src="bower_components/matches-selector/matches-selector.js"></script>
+<script src="bower_components/ev-emitter/ev-emitter.js"></script>
+<script src="bower_components/desandro-matches-selector/matches-selector.js"></script>
 <script src="bower_components/fizzy-ui-utils/utils.js"></script>
 <script src="bower_components/outlayer/item.js"></script>
 <script src="bower_components/outlayer/outlayer.js"></script>
 <script src="bower_components/masonry/masonry.js"></script>
+<script src="bower_components/eventEmitter/EventEmitter.js"></script>
 <script src="bower_components/imagesloaded/imagesloaded.js"></script>
 <script src="bower_components/angular-masonry-directive/src/angular-masonry-directive.js"></script>
 <script src="bower_components/slick-carousel/slick/slick.min.js"></script>
 <script src="bower_components/angular-slick/dist/slick.js"></script>
 <script src="bower_components/ng-dialog/js/ngDialog.js"></script>
 <!-- endbower -->
-<script src="js/high_slideshow.js"></script>
-<script src="js/grid-list-view.js"></script>
 
-<script type="text/javascript" src="js/slideshow.js"></script>
-<script src="js/featured_resource_switchcontrol.js"></script>
-
-<script src="js/primary_slider_main.js"></script> <!-- Resource jQuery -->
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
