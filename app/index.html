@@ -7,7 +7,7 @@
  	 <meta name="description" content="Exhibition Application, powered by Trove">
   	<meta name="author" content="Trove">
 
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -33,10 +33,10 @@
     <ul ng-hide="listHide" class="ng-hide" id="lists">
       <!-- CHANGE THIS TO LIST THE TROVE LISTS THAT MAKE UP YOUR EXHIBITION -->
       <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92589">Minties</a></li>
-         <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92672">Vegemite</a></li>
-         <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92583">Jantzen</a></li>
-         <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92603">Bile Beans</a></li>
-         <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92585">Stamina trousers</a></li>
+          <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92672">Vegemite</a></li>
+          <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92583">Jantzen</a></li>
+          <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92603">Bile Beans</a></li>
+          <li><a class="list-link" href="http://trove.nla.gov.au/list?id=92585">Stamina trousers</a></li>
 
     </ul>
     <div ng-hide="listHide" class="ng-hide" id="exhibition-model-description">
@@ -56,6 +56,21 @@
       <div ng-view="" class="view-frame"></div>
     </div>
   </div>
+
+
+      <div class="base-nav">
+       <ul>
+          <li class="primary-close"><a ng-href="#/">THE SELL</a></li>
+
+           <li id="base-nav-featured"><a ng-href="#/featured/">FEATURED</a></li>
+          <li id="base-nav-resources"><a href="#">RESOURCES</a></li>
+          <li><!-- EMPTY DIV FOR GREY LINE --></li>
+          <li><a class="grid-trigger" href="#0">
+              <img src="img/icon-trigger.png" width="100%" height="100%"/></a>
+           </li> <!-- primary exhibition trigger -->
+       </ul>
+      </div>
+
 <section class="main"></section>
 
 
@@ -74,14 +89,16 @@
 <script src="bower_components/angular-fontawesome/dist/angular-fontawesome.js"></script>
 <script src="bower_components/angular-truncate/src/truncate.js"></script>
 <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+<script src="bower_components/get-style-property/get-style-property.js"></script>
 <script src="bower_components/get-size/get-size.js"></script>
-<script src="bower_components/ev-emitter/ev-emitter.js"></script>
-<script src="bower_components/desandro-matches-selector/matches-selector.js"></script>
+<script src="bower_components/eventie/eventie.js"></script>
+<script src="bower_components/doc-ready/doc-ready.js"></script>
+<script src="bower_components/eventEmitter/EventEmitter.js"></script>
+<script src="bower_components/matches-selector/matches-selector.js"></script>
 <script src="bower_components/fizzy-ui-utils/utils.js"></script>
 <script src="bower_components/outlayer/item.js"></script>
 <script src="bower_components/outlayer/outlayer.js"></script>
 <script src="bower_components/masonry/masonry.js"></script>
-<script src="bower_components/eventEmitter/EventEmitter.js"></script>
 <script src="bower_components/imagesloaded/imagesloaded.js"></script>
 <script src="bower_components/angular-masonry-directive/src/angular-masonry-directive.js"></script>
 <script src="bower_components/slick-carousel/slick/slick.min.js"></script>
@@ -100,5 +117,10 @@
 <script src="scripts/controllers/item.js"></script>
 <script src="scripts/controllers/highlights.js"></script>
 <!-- endbuild -->
+
+<script src="js/featured_resource_switchcontrol.js"></script>
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/primary_slider_main.js"></script>
+<script src="js/grid-list-view.js"></script>
 </body>
 </html>

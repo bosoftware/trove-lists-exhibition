@@ -1,3 +1,4 @@
+jQuery(document).ready(function ($) {
  $('button').on('click',function(e) {
     if ($(this).hasClass('featured-grid')) {
         $('#featured-list-container ul').removeClass('featured-list').addClass('featured-grid');
@@ -16,4 +17,4 @@ $('button').on('click',function(e) {
     }
 });
 
-
+});

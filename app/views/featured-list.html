@@ -1,3 +1,4 @@
+
 <div class="loading text-muted" ng-hide="lists"><fa name="spinner" size="5" spin></fa><br>Loading resources&hellip;</div>
             <!-- FEATURED INFORMATION -->
 <div class="featured">
@@ -23,11 +24,11 @@
 <div id="featured-list-container">
     <ul class="featured-grid">
         <li ng-repeat="(id, list) in lists">
-            <div class="featured-grid-thumbnail">
-              <img ng-if="list.thumbnail" style='max-height: 100%; width: 100%; margin: auto; display: block;' ng-src="{{ list.thumbnail }}" alt="Thumbnail for {{ list.title }}">
-            </div>
+            <div class="featured-grid-thumbnail" style="background-image: url({{ list.thumbnail }});width: 100%;height: 100%;">  </div>
+              <!-- <img  class="featured-grid-thumbnail" ng-if="list.thumbnail" ng-src="{{ list.thumbnail }}" alt="Thumbnail for {{ list.title }}"> -->
+
             <div class="featured-grid-title">{{ list.title }}</div>
-            <div class="featured-grid-number">{{$index}}</div>
+            <div class="featured-grid-number">{{$index+1}}</div>
             <div class="featured-grid-description">
                 <p>{{list.description}} </p>
             </div>

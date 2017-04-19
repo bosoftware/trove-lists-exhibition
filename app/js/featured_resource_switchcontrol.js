@@ -1,3 +1,5 @@
+jQuery(document).ready(function ($) {
+
 $('#base-nav-featured').click(function() {
     $('.featured').css({
         'display': 'inline',
@@ -26,4 +28,6 @@ $('#base-nav-resources').click(function() {
     $('.base-nav li:nth-child(3)').css({
         'opacity': '1',
     });
+});
+
 });
