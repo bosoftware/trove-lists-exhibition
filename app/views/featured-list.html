@@ -1,5 +1,5 @@
 
-<div class="loading text-muted" ng-hide="lists"><fa name="spinner" size="5" spin></fa><br>Loading resources&hellip;</div>
+
             <!-- FEATURED INFORMATION -->
 <div class="featured">
     <div id="featured-header">
@@ -20,8 +20,8 @@
         </ul>
     </div>
 
-
-<div id="featured-list-container">
+<div class="loading text-muted" ng-hide="lists"><fa name="spinner" size="5" spin></fa><br>Loading resources&hellip;</div>
+<div id="featured-list-container" ng-show="lists">
     <ul class="featured-grid">
         <li ng-repeat="(id, list) in lists">
             <div class="featured-grid-thumbnail" style="background-image: url({{ list.thumbnail }});width: 100%;height: 100%;">  </div>
