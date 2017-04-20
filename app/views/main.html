@@ -1,41 +1,49 @@
 <!--    HOME SCREEN AND IMAGE SLIDER    -->
-<div class="loading text-muted" ng-hide="lists"><fa name="spinner" size="5" spin></fa><br>Loading resources&hellip;</div>
 <main>
 <div class="slideshow-container">
 <div id="header">
     <ul>
         <li><a href="#0" class="popup-description-trigger"><img border="0" alt="Information icon" src="img/icon_info.png" width="100%" height="100%" align="middle">INFORMATION</a></li>
 
-        <li><a href="#0" class="popup-highlights-trigger">{{highlights}}<img border="0" alt="Exhibtiion Highlights icon" src="img/icon_museum.png" width="100%" height="100%" align="middle"></a></li>
+        <li><a href="#0" class="popup-highlights-trigger">EXHIBITION HIGHLIGHTS<img border="0" alt="Exhibtiion Highlights icon" src="img/icon_museum.png" width="100%" height="100%" align="middle"></a></li>
     </ul>
 </div>
 
-<div class="homeSlides" ng-repeat="(id, list) in lists">
-  <img ng-if="list.thumbnail" height="100%" width="100%" ng-src="{{ list.thumbnail }}" alt="Thumbnail for {{ list.title }}">
-  <div ng-if="!list.thumbnail" height="100%" width="100%">
-    <fa class="blank-icon" name="list" size="4"></fa>
-  </div>
-  <div class="slide-caption"></div>
+<div class="homeSlides">
+    <img src="img/HS_1.png" height="100%" width="100%"/>
+    <div class="slide-caption"></div>
+</div>
 
+<div class="homeSlides">
+    <img src="img/HS_2.png" height="100%" width="100%"/>
+    <div class="slide-caption"></div>
+</div>
 
+<div class="homeSlides">
+    <img src="img/HS_3.png" height="100%" width="100%"/>
+    <div class="slide-caption"></div>
 </div>
 
 </div>
 
 <div style="text-align:center">
-<span class="dot" ng-repeat="(id, list) in lists"></span>
-
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
 </div>
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/popup_main.js"></script>
 <script type="text/javascript" src="js/slideshow.js"></script>
 </main>
+
 <!--    HOME SCREEN AND IMAGE SLIDER    -->
 
 
 <!--    POP UP FOR THE EXHIBITION DESCRIPTION    -->
 <div class="popup-description" role="alert">
-<div class="popup-description-container">
+
+<div class="popup-description-container" >
     <h1>{{exhibition}}</h1>
     <p>{{description}}</p>
         <div id="ex_high"><a href="#" class="exhigh-trigger">
@@ -57,7 +65,8 @@
 
 <!-- ADD THE YOUR HIGHLIGHT IMAGES AND DESCRIPTIONS HERE -->
 <div class="highlights-slider-container">
-  <div id="highlights-slider">
+  <div class="loading text-muted" ng-hide="lists"><fa name="spinner" size="5" spin></fa><br>Loading resources&hellip;</div>
+  <div id="highlights-slider" ng-hide="!lists">
     <div class="highSlides" ng-repeat="(id, list) in lists">
       <div class="numbertext">{{$index+1}} / {{lists.length}}</div>
       <img ng-src="{{ list.thumbnail }}" height="100%" width="100%">
@@ -75,4 +84,3 @@
     <script src="js/high_slideshow.js"></script>
 </div>
 </div>
-<script src="js/high_slideshow.js"></script>

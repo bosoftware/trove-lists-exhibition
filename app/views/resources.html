@@ -1,6 +1,6 @@
 <!-- RESOURCES INFORMATION -->
 
-<div class="resources">
+<div class="resources" >
     <div id="resources-header">
         <h1>RESOURCES</h1>
         <ul class="resources-header-icons">
@@ -21,90 +21,39 @@
     <div id="resources-secondary">
         <ul>
         <li>
-            <form id="orderBy" action="">Order by:
-                <select name="orderBy">
-                    <option class="orderOption" value="title">Title</option>
-                    <option value="theme">Theme</option>
-                    <option value="year">Year</option>
+            <form id="orderBy"  role="search">Order by:
+                <select class="form-control" ng-model="sort">
+                  <option class="orderOption" value="order">Topic</option>
+                  <option value="title">Title</option>
+                  <option value="year">Year</option>
+
                   </select>
                   <input type="submit">
             </form>
         </li>
         <li>
-            <form>Filter by: <input id="filterBy" type="search" placeholder="Query"></form>
+            <form>Filter by: <input id="filterBy" type="search" placeholder="query"></form>
         </li>
         </ul>
     </div>
+<div class="loading text-muted" ng-hide="lists"><fa name="spinner" size="5" spin></fa><br>Loading resources&hellip;</div>
+<div id="resources-list-container" ng-show="items" infinite-scroll="loadMore()" infinite-scroll-distance="3">
 
-<div id="resources-list-container">
     <ul class="resources-grid">
-        <li>
-            <div class="resource-grid-thumbnail"></div>
-            <a href="#0" class="resources-grid-title">Resource</a>
-            <a href="#0" class="resources-grid-type">Book</a>
-            <a href="#0" class="resources-grid-year">Year</a>
+        <li ng-repeat="item in items | filter:query | orderBy:sort | limitTo:totalDisplayed">
+            <div class="resource-grid-thumbnail" style="background-image: url({{ item.thumbnail }});width: 100%;height: 100%;"></div>
+            <a href="#0" class="resources-grid-title">{{ item.title }}</a>
+            <a href="#0" class="resources-grid-type">{{ item.type}}</a>
+            <a href="#0" class="resources-grid-year">{{ item.date}}</a>
         </li>
 
-        <li>
-            <div class="resource-grid-thumbnail"></div>
-            <a href="#0" class="resources-grid-title">Resource</a>
-            <a href="#0" class="resources-grid-type">Book</a>
-            <a href="#0" class="resources-grid-year">Year</a>
-        </li>
 
-        <li>
-            <div class="resource-grid-thumbnail"></div>
-            <a href="#0" class="resources-grid-title">Resource</a>
-            <a href="#0" class="resources-grid-type">Book</a>
-            <a href="#0" class="resources-grid-year">Year</a>
-        </li>
-
-        <li>
-            <div class="resource-grid-thumbnail"></div>
-            <a href="#0" class="resources-grid-title">Resource</a>
-            <a href="#0" class="resources-grid-type">Book</a>
-            <a href="#0" class="resources-grid-year">Year</a>
-        </li>
-
-        <li>
-            <div class="resource-grid-thumbnail"></div>
-            <a href="#0" class="resources-grid-title">Resource</a>
-            <a href="#0" class="resources-grid-type">Book</a>
-            <a href="#0" class="resources-grid-year">Year</a>
-        </li>
-
-        <li>
-            <div class="resource-grid-thumbnail"></div>
-            <a href="#0" class="resources-grid-title">Resource</a>
-            <a href="#0" class="resources-grid-type">Book</a>
-            <a href="#0" class="resources-grid-year">Year</a>
-        </li>
-
-        <li>
-            <div class="resource-grid-thumbnail"></div>
-            <a href="#0" class="resources-grid-title">Resource</a>
-            <a href="#0" class="resources-grid-type">Book</a>
-            <a href="#0" class="resources-grid-year">Year</a>
-        </li>
-
-        <li>
-            <div class="resource-grid-thumbnail"></div>
-            <a href="#0" class="resources-grid-title">Resource</a>
-            <a href="#0" class="resources-grid-type">Book</a>
-            <a href="#0" class="resources-grid-year">Year</a>
-        </li>
-
-        <li>
-            <div class="resource-grid-thumbnail"></div>
-            <a href="#0" class="resources-grid-title">Resource</a>
-            <a href="#0" class="resources-grid-type">Book</a>
-            <a href="#0" class="resources-grid-year">Year</a>
-        </li>
     </ul>
 </div>
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/popup_main.js"></script>
     <div class="secondary" role="alert">
-	<div class="secondary-container">
+	<div class="secondary-container" ng-hide="!lists">
 		<ul class="secondary-list">
             <li>
                 <div class="secondary-item-title">ITEM</div>
@@ -195,3 +144,20 @@
             </div>
         </div>
     </div>
+
+<script>
+  jQuery(document).ready(function ($) {
+  $('.resources').css({
+      'display': 'inline',
+  });
+  $('.featured').css({
+      'display': 'none',
+  });
+  $('.base-nav li:nth-child(2)').css({
+      'opacity': '0.5',
+  });
+  $('.base-nav li:nth-child(3)').css({
+      'opacity': '1',
+  });
+});
+</script>

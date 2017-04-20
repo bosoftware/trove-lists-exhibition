@@ -47,7 +47,7 @@ app.config(function ($routeProvider,$sceDelegateProvider) {
       controllerAs: 'lc'
     })
     .when('/resources/', {
-      templateUrl: 'views/items.html',
+      templateUrl: 'views/resources.html',
       controller: 'ItemsCtrl',
       controllerAs: 'isc'
     })

@@ -68,7 +68,7 @@ $('.secondary').on('click', function (event) {
         $(this).removeClass('is-visible');
     }
 });
-    
+
 //close secondary popup when clicking the esc keyboard button
 $(document).keyup(function(event){
     if(event.which=='27'){
@@ -85,7 +85,8 @@ $(document).keyup(function(event){
 
 
                 //open tertiary popup
-$('.secondary-container .secondary-list li, .resource-grid-thumbnail').on('click', function(event){
+$('.resource-grid-thumbnail').click(function(event){
+  alert('a');
     event.preventDefault();
     $('.tertiary').addClass('is-visible');
     $('#resources-header, #resources-secondary').css({

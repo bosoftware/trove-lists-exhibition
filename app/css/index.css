@@ -865,7 +865,7 @@ button {
     line-height: 50px;
 }
 .resources-list .resource-grid-thumbnail {
-    display: none;
+    /*display: none;*/
 }
 
         /* SECONDARY ITEM LIST POPUPS */
