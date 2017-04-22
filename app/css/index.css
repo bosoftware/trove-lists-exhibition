@@ -906,6 +906,14 @@ button {
     height: 30px;
 }
 
+.resources .secondary-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+}
+
 .secondary-container .secondary-close::before, .secondary-container .secondary-close::after {
 }
 .secondary-container .secondary-close::before {

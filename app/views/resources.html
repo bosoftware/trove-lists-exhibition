@@ -37,59 +37,31 @@
         </li>
         </ul>
     </div>
-<div class="loading text-muted" ng-hide="lists"><fa name="spinner" size="5" spin></fa><br>Loading resources&hellip;</div>
-<div id="resources-list-container" ng-show="items" infinite-scroll="loadMore()" infinite-scroll-distance="3">
+<div class="loading text-muted" ng-hide="items"><fa name="spinner" size="5" spin></fa><br>Loading resources&hellip;</div>
+<div >
+<div id="resources-list-container"  ng-show="items" >
 
     <ul class="resources-grid">
-        <li ng-repeat="item in items | filter:query | orderBy:sort | limitTo:totalDisplayed">
+        <li ng-repeat="item in items | filter:query | orderBy:sort ">
             <div ng-click="displayTertiary()"class="resource-grid-thumbnail resource-grid-thumbnail-div" style="background-image: url({{ item.thumbnail }});width: 100%;height: 100%;"></div>
-            <a href="#0" class="resources-grid-title">{{ item.title }}</a>
-            <a href="#0" class="resources-grid-type">{{ item.type}}</a>
-            <a href="#0" class="resources-grid-year">{{ item.date}}</a>
+            <a ng-href="#/topics/{{ list.order }}" class="resources-grid-title">{{ item.title }}</a>
+            <a ng-href="#/topics/{{ list.order }}" class="resources-grid-type">{{ item.type}}</a>
+            <a ng-href="#/topics/{{ list.order }}" class="resources-grid-year">{{ item.date}}</a>
         </li>
 
 
     </ul>
-    <script src="js/popup_main.js"></script>
+
+</div>
 </div>
 
 
-    <div class="secondary" role="alert">
-	<div class="secondary-container">
-		<ul class="secondary-list">
-            <li>
-                <div class="secondary-item-title">ITEM</div>
-                <div class="secondary-item-description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu magna lorem. Maecenas efficitur nisl laoreet, ultrices metus in, suscipit risus. Mauris fermentum, dui ut hendrerit interdum, sapien leo mattis lorem, ut varius justo libero et lectus. Nullam auctor, odio sit amet finibus laoreet, ante magna gravida magna, sit amet posuere metus nisi non tellus. Sed congue volutpat risus et gravida. Sed non est lacus. </p>
-                </div>
-            </li>
-            <li>
-                <div class="secondary-item-title">ITEM</div>
-                <div class="secondary-item-description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu magna lorem. Maecenas efficitur nisl laoreet, ultrices metus in, suscipit risus. Mauris fermentum, dui ut hendrerit interdum, sapien leo mattis lorem, ut varius justo libero et lectus. Nullam auctor, odio sit amet finibus laoreet, ante magna gravida magna, sit amet posuere metus nisi non tellus. Sed congue volutpat risus et gravida. Sed non est lacus. </p>
-                </div>
-            </li>
-            <li>
-                <div class="secondary-item-title">ITEM</div>
-                <div class="secondary-item-description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu magna lorem. Maecenas efficitur nisl laoreet, ultrices metus in, suscipit risus. Mauris fermentum, dui ut hendrerit interdum, sapien leo mattis lorem, ut varius justo libero et lectus. Nullam auctor, odio sit amet finibus laoreet, ante magna gravida magna, sit amet posuere metus nisi non tellus. Sed congue volutpat risus et gravida. Sed non est lacus. </p>
-                </div>
-            </li>
-            <li>
-                <div class="secondary-item-title">ITEM</div>
-                <div class="secondary-item-description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu magna lorem. Maecenas efficitur nisl laoreet, ultrices metus in, suscipit risus. Mauris fermentum, dui ut hendrerit interdum, sapien leo mattis lorem, ut varius justo libero et lectus. Nullam auctor, odio sit amet finibus laoreet, ante magna gravida magna, sit amet posuere metus nisi non tellus. Sed congue volutpat risus et gravida. Sed non est lacus. </p>
-                </div>
-            </li>
-        </ul>
-		<a href="#0" class="secondary-close"><img src="img/icon_close.png" height="100%" width="100%"/></a>
-	</div>
-</div> <!-- SECONDARY CLOSE -->
 
 
     <div class="tertiary" role="alert">
 	<div class="tertiary-container">
-		<div id="item-header">
+    <div class="loading text-muted" ng-hide="items"><fa name="spinner" size="5" spin></fa><br>Loading resources&hellip;</div>
+		<div id="item-header" ng-show="items">
             <h1>RESOURCE TITLE</h1>
             <h2>Monday 1 January 2017</h2>
             <h3>Origin of item</h3>
@@ -164,3 +136,5 @@
 
 });
 </script>
+<script src="js/popup_main.js"></script>
+<script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>

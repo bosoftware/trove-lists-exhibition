@@ -18,9 +18,8 @@ var app = angular.module('trovelistsApp', [
     'picardy.fontawesome',
     'truncate',
     'infinite-scroll',
-    'masonry',
-    'slick',
-    'ngDialog'
+    'masonry'
+
   ]);
 
 app.config(function ($routeProvider,$sceDelegateProvider) {
@@ -71,7 +70,7 @@ app.config(function ($routeProvider,$sceDelegateProvider) {
     });
   });
 
-app.controller('BaseCtrl', function($scope, $document, $location,$compile,ngDialog) {
+app.controller('BaseCtrl', function($scope, $document, $location,$compile) {
   $document.scrollTop(0);
   if (typeof $scope.exhibition === 'undefined') {
     $scope.listHide = true;
@@ -89,9 +88,6 @@ app.controller('BaseCtrl', function($scope, $document, $location,$compile,ngDial
     $scope.highlights = angular.element('#exhibition-highlights').html();
     $scope.listLinks = angular.element('.list-link');
     $scope.config = window.config;
-    $scope.clickToOpen = function () {
-        ngDialog.open({ template: 'views/highlights.html', className: 'ngdialog-theme-default' });
-    };
   }
 });
 
@@ -287,7 +283,7 @@ app.directive( 'elemReady', function( $parse ) {
        link: function( $scope, elem, attrs ) {
           elem.ready(function(){
             $scope.$apply(function(){
-                
+
                 var func = $parse(attrs.elemReady);
                 func($scope);
             })

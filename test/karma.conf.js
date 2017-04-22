@@ -46,9 +46,6 @@ module.exports = function(config) {
       'bower_components/masonry/masonry.js',
       'bower_components/imagesloaded/imagesloaded.js',
       'bower_components/angular-masonry-directive/src/angular-masonry-directive.js',
-      'bower_components/slick-carousel/slick/slick.min.js',
-      'bower_components/angular-slick/dist/slick.js',
-      'bower_components/ng-dialog/js/ngDialog.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

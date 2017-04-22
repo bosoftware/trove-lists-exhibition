@@ -26,6 +26,7 @@ angular.module('trovelistsApp')
     };
     var setList = function() {
       var list = $filter('findById')($rootScope.lists, $routeParams.order);
+      
       $scope.list = list;
     };
     if (typeof $rootScope.items === 'undefined' && $rootScope.failed !== true) {
@@ -54,4 +55,3 @@ angular.module('trovelistsApp')
       setList();
     }
   }]);
-

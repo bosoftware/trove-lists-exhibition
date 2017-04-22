@@ -24,9 +24,9 @@
 <div id="featured-list-container" ng-show="lists">
     <ul class="featured-grid">
         <li ng-repeat="(id, list) in lists">
-            <div class="featured-grid-thumbnail" style="background-image: url({{ list.thumbnail }});width: 100%;height: 100%;">  </div>
+            <a ng-href="#/topics/{{ list.order }}"><div  class="featured-grid-thumbnail" style="background-image: url({{ list.thumbnail }});width: 100%;height: 100%;">  </div>
               <!-- <img  class="featured-grid-thumbnail" ng-if="list.thumbnail" ng-src="{{ list.thumbnail }}" alt="Thumbnail for {{ list.title }}"> -->
-
+            </a>
             <div class="featured-grid-title">{{ list.title }}</div>
             <div class="featured-grid-number">{{$index+1}}</div>
             <div class="featured-grid-description">
