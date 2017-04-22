@@ -51,8 +51,8 @@
       config.showGrid = true;
     </script>
     <!-- END OF YOUR DETAILS -->
-
-    <div class="view-container">
+<div class="loading text-muted" ng-hide="lists"><fa name="spinner" size="5" spin></fa><br>Loading resources&hellip;</div>
+    <div class="view-container" ng-show="lists">
       <div ng-view="" class="view-frame"></div>
     </div>
   </div>
@@ -89,14 +89,16 @@
 <script src="bower_components/angular-fontawesome/dist/angular-fontawesome.js"></script>
 <script src="bower_components/angular-truncate/src/truncate.js"></script>
 <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+<script src="bower_components/get-style-property/get-style-property.js"></script>
 <script src="bower_components/get-size/get-size.js"></script>
-<script src="bower_components/ev-emitter/ev-emitter.js"></script>
-<script src="bower_components/desandro-matches-selector/matches-selector.js"></script>
+<script src="bower_components/eventie/eventie.js"></script>
+<script src="bower_components/doc-ready/doc-ready.js"></script>
+<script src="bower_components/eventEmitter/EventEmitter.js"></script>
+<script src="bower_components/matches-selector/matches-selector.js"></script>
 <script src="bower_components/fizzy-ui-utils/utils.js"></script>
 <script src="bower_components/outlayer/item.js"></script>
 <script src="bower_components/outlayer/outlayer.js"></script>
 <script src="bower_components/masonry/masonry.js"></script>
-<script src="bower_components/eventEmitter/EventEmitter.js"></script>
 <script src="bower_components/imagesloaded/imagesloaded.js"></script>
 <script src="bower_components/angular-masonry-directive/src/angular-masonry-directive.js"></script>
 <script src="bower_components/slick-carousel/slick/slick.min.js"></script>

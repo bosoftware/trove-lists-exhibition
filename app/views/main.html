@@ -1,6 +1,7 @@
 <!--    HOME SCREEN AND IMAGE SLIDER    -->
 <main>
 <div class="slideshow-container">
+
 <div id="header">
     <ul>
         <li><a href="#0" class="popup-description-trigger"><img border="0" alt="Information icon" src="img/icon_info.png" width="100%" height="100%" align="middle">INFORMATION</a></li>
@@ -66,12 +67,13 @@
 <!-- ADD THE YOUR HIGHLIGHT IMAGES AND DESCRIPTIONS HERE -->
 <div class="highlights-slider-container">
   <div class="loading text-muted" ng-hide="lists"><fa name="spinner" size="5" spin></fa><br>Loading resources&hellip;</div>
-  <div id="highlights-slider" ng-hide="!lists">
+  <div id="highlights-slider" ng-show="lists">
     <div class="highSlides" ng-repeat="(id, list) in lists">
       <div class="numbertext">{{$index+1}} / {{lists.length}}</div>
       <img ng-src="{{ list.thumbnail }}" height="100%" width="100%">
       <div class="highSlides-caption">{{ list.title }}</div>
     </div>
+
   </div>
 
   <a class="prev" onclick="plusSlides(-1)"><img src="img/icon_previous.png" /> previous</a>

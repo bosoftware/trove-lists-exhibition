@@ -1,4 +1,5 @@
 jQuery(document).ready(function ($) {
+
 //open description popup
 $('.popup-description-trigger').on('click', function (event) {
     event.preventDefault();
@@ -27,6 +28,7 @@ $('.popup-highlights-trigger, .exhigh-trigger').on('click', function (event) {
 	$('#body').css({
             'overflow': 'hidden',
         });
+        currentSlide(1);
 });
 
 //close highlights popup
@@ -86,7 +88,7 @@ $(document).keyup(function(event){
 
                 //open tertiary popup
 $('.resource-grid-thumbnail').click(function(event){
-  alert('a');
+
     event.preventDefault();
     $('.tertiary').addClass('is-visible');
     $('#resources-header, #resources-secondary').css({

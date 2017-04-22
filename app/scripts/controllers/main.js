@@ -24,7 +24,7 @@ angular.module('trovelistsApp')
                 loadListData();
               } else {
                 //$rootScope.listHide = false;
-                
+
                 $rootScope.failed = true;
               }
             }

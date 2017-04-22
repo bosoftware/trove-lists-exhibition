@@ -32,7 +32,8 @@
             </form>
         </li>
         <li>
-            <form>Filter by: <input id="filterBy" type="search" placeholder="query"></form>
+            <form>Filter by: <input id="filterBy" type="search" placeholder="query" ng-model="query"></form>
+
         </li>
         </ul>
     </div>
@@ -41,7 +42,7 @@
 
     <ul class="resources-grid">
         <li ng-repeat="item in items | filter:query | orderBy:sort | limitTo:totalDisplayed">
-            <div ng-click="test()"class="resource-grid-thumbnail resource-grid-thumbnail-div" style="background-image: url({{ item.thumbnail }});width: 100%;height: 100%;"></div>
+            <div ng-click="displayTertiary()"class="resource-grid-thumbnail resource-grid-thumbnail-div" style="background-image: url({{ item.thumbnail }});width: 100%;height: 100%;"></div>
             <a href="#0" class="resources-grid-title">{{ item.title }}</a>
             <a href="#0" class="resources-grid-type">{{ item.type}}</a>
             <a href="#0" class="resources-grid-year">{{ item.date}}</a>
