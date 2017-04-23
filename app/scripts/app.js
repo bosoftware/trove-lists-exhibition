@@ -46,7 +46,7 @@ app.config(function ($routeProvider,$sceDelegateProvider) {
       controllerAs: 'lc'
     })
     .when('/resources/', {
-      templateUrl: 'views/resources.html',
+      templateUrl: 'views/items.html',
       controller: 'ItemsCtrl',
       controllerAs: 'isc'
     })
@@ -54,16 +54,6 @@ app.config(function ($routeProvider,$sceDelegateProvider) {
       templateUrl: 'views/item.html',
       controller: 'ItemCtrl',
       controllerAs: 'ic'
-    })
-    .when('/highlights/', {
-      templateUrl: 'views/highlights.html',
-      controller: 'HighlightsCtrl',
-      controllerAs: 'hc'
-    })
-    .when('/featured/', {
-      templateUrl: 'views/featured-list.html',
-      controller: 'ListsCtrl',
-      controllerAs: 'lc'
     })
     .otherwise({
       redirectTo: '/'

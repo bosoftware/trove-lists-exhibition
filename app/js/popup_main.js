@@ -33,11 +33,14 @@ $('.popup-highlights-trigger, .exhigh-trigger').on('click', function (event) {
 
 //close highlights popup
 $('.popup-highlights').on('click', function (event) {
-    if ($(event.target).is('.popup-highlights-close') || $(event.target).is('.popup-highlights')) {
+  if (($(event.target).is('.popup-highlights-close')||$(event.target).is('.tertiary-close')) || $(event.target).is('.popup-highlights')) {
         event.preventDefault();
         $(this).removeClass('is-visible');
     }
 });
+
+
+
 //close highlights popup when clicking the esc keyboard button
 $(document).keyup(function (event) {
     if (event.which === '27') {
@@ -87,17 +90,17 @@ $(document).keyup(function(event){
 
 
                 //open tertiary popup
-$('.resource-grid-thumbnail').click(function(event){
-
-    event.preventDefault();
-    $('.tertiary').addClass('is-visible');
-    $('#resources-header, #resources-secondary').css({
-            'display': 'none',
-        });
-    $('.resources, .featured').css({
-            'overflow': 'hidden',
-        });
-});
+// $('.resource-grid-thumbnail').click(function(event){
+//
+//     event.preventDefault();
+//     $('.tertiary').addClass('is-visible');
+//     $('#resources-header, #resources-secondary').css({
+//             'display': 'none',
+//         });
+//     $('.resources, .featured').css({
+//             'overflow': 'hidden',
+//         });
+// });
 
                 //close tertiary popup
 $('.tertiary').on('click', function(event){

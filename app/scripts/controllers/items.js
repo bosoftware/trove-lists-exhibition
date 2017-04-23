@@ -17,16 +17,7 @@ angular.module('trovelistsApp')
         $scope.totalDisplayed += 20;
       }
     };
-    $scope.displayTertiary = function(){
-      event.preventDefault();
-      $('.tertiary').addClass('is-visible');
-      $('#resources-header, #resources-secondary').css({
-              'display': 'none',
-          });
-      $('.resources, .featured').css({
-              'overflow': 'hidden',
-          });
-    };
+
     if (typeof $rootScope.items === 'undefined' && $rootScope.failed !== true) {
         var tries = 1;
         var loadListData = function() {

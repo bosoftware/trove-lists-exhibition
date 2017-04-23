@@ -49,7 +49,7 @@ angular.module('trovelistsApp')
         $http.jsonp('http://api.trove.nla.gov.au/work/' + item.id + '?encoding=json&reclevel=full&include=holdings&key=' + window.troveAPIKey + '&callback=JSON_CALLBACK', {cache: true})
           .then(function successCallback(response) {
             var nuc;
-            try { 
+            try {
               nuc = response.data.work.holding[0].nuc;
             } catch(e) {
               //Do nothing

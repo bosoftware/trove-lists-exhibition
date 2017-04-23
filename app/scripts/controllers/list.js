@@ -12,6 +12,21 @@ angular.module('trovelistsApp')
     $document.scrollTop(0);
     //this.order = $routeParams.order;
     //this.list = lists[listId];
+    $scope.displayTertiary = function(item){
+      event.preventDefault();
+      $('.popup-highlights').addClass('is-visible');
+      $('#itemimagesrc').attr('src',item.thumbnail);
+
+      $('.itemtitle').html(item.title);
+      $('.itemdate').html(item.date);
+      $('.itemtype').html(item.type);
+      // $('#resources-header, #resources-secondary').css({
+      //         'display': 'none',
+      //     });
+      // $('.resources, .featured').css({
+      //         'overflow': 'hidden',
+      //     });
+    };
     $scope.nextList = function() {
       var order = parseInt($routeParams.order, 10);
       if (order < $rootScope.lists.length) {
@@ -26,7 +41,7 @@ angular.module('trovelistsApp')
     };
     var setList = function() {
       var list = $filter('findById')($rootScope.lists, $routeParams.order);
-      
+
       $scope.list = list;
     };
     if (typeof $rootScope.items === 'undefined' && $rootScope.failed !== true) {

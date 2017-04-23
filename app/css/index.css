@@ -278,6 +278,7 @@ main {
     visibility: hidden;
     z-index: 10;
 }
+
 .popup-highlights.is-visible {
     opacity: 1;
     visibility: visible;
@@ -292,6 +293,10 @@ main {
     margin: auto;
     z-index: 20;
     background-color: #ffffff;
+}
+
+.resources	.popup-highlights-container{
+	margin-top: 100px !important;
 }
 .popup-highlights-container h1 {
     float: left;
@@ -347,7 +352,7 @@ main {
 /*      EXHIBITION HIGHLIGHTS SLIDER     */
 
 /* Slideshow container */
-.highlights-slider-container {
+.highlights-slider-container{
     height: 75%;
     width: 90%;
     margin: 0px 0 0 5% !important;
@@ -356,9 +361,13 @@ main {
     background-color: #f8f8f8;
 }
 
-.highSlides {display:none}
+.highSlides,
+.itemSlides
+{display:none}
 
-.highSlides img {
+.highSlides img,
+.itemSlides img
+ {
     height: 380px;
     width: 65%;
     margin-left: 17.5%;
@@ -1056,6 +1065,8 @@ button {
     font-size: 30pt;
     font-weight: 800;
     line-height: 50px;
+		margin-top: 30px !important;
+		margin-left: 0px !important;
 }
 
 #item-header h2 {
@@ -1077,20 +1088,14 @@ button {
 
 /* Slideshow container */
 .item-slider-container {
-    height: 55%;
+    height: 100% !important;
     width: 90%;
     margin: 0px 0 0 5% !important;
     position: fixed;
 }
 
 
-.itemSlides img {
-    height: 380px;
-    width: 65%;
-    margin-left: 17.5%;
-    margin-top: 12%;
-    object-fit:cover;
-}
+
 
 /* Next & previous buttons */
 .item-prev, .item-next {
@@ -1117,6 +1122,29 @@ button {
 }
 
 /* Caption text */
+.list-item {
+    color: #000000;
+    padding: 4px;
+    position: absolute;
+    margin: 100px 0 0 17.5%;
+    width: 65%;
+    font-family: Gilroy;
+    font-weight: 300;
+    font-size: 14pt;
+    float: left;
+}
+
+.list-item-caption {
+    color: #000000;
+    padding: 4px;
+    position: absolute;
+    margin: 430px 0 0 17.5%;
+    width: 65%;
+    font-family: Gilroy;
+    font-weight: 300;
+    font-size: 14pt;
+    float: left;
+}
 .item {
     color: #000000;
     padding: 4px;
@@ -1148,6 +1176,24 @@ button {
     margin-top: 400px;
 }
 
+#list-item-links {
+	 position: fixed;
+    height: 100px;
+    width: 98%;
+    margin-left: 2%;
+    /*margin-top: 400px;*/
+		top: 80%;
+}
+
+#list-item-links h1 a{
+    font-family: Gilroy;
+    font-size: 15pt;
+    font-weight: 300;
+    line-height: 35px;
+    margin-top: -30px;
+    color: #609544;
+}
+
 #item-links h1 a {
     font-family: Gilroy;
     font-size: 15pt;
@@ -1156,10 +1202,17 @@ button {
     margin-top: -20px;
     color: #609544;
 }
-
+#list-item-links h1 img,
 #item-links h1 img {
     height: 15px;
     width: 15px;
+}
+#list-item-links h2{
+    font-family: Gilroy;
+    font-size: 15pt;
+    font-weight: 300;
+    line-height: 35px;
+    margin-top: 0px;
 }
 
 #item-links h2 {
@@ -1167,9 +1220,9 @@ button {
     font-size: 15pt;
     font-weight: 300;
     line-height: 35px;
-    margin-top: -20px;
+    margin-top: 0px;
 }
-
+#list-item-links h2 a,
 #item-links h2 a {
     color: #609544;
 }
