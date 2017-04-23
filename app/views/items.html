@@ -43,10 +43,10 @@
 
     <ul class="resources-grid">
         <li ng-repeat="item in items | filter:query | orderBy:sort ">
-            <div ng-click="displayTertiary()"class="resource-grid-thumbnail resource-grid-thumbnail-div" style="background-image: url({{ item.thumbnail }});width: 100%;height: 100%;"></div>
-            <a ng-href="#/topics/{{ list.order }}" class="resources-grid-title">{{ item.title }}</a>
-            <a ng-href="#/topics/{{ list.order }}" class="resources-grid-type">{{ item.type}}</a>
-            <a ng-href="#/topics/{{ list.order }}" class="resources-grid-year">{{ item.date}}</a>
+            <div ng-click="displayTertiary(item)" class="resource-grid-thumbnail resource-grid-thumbnail-div" style="background-image: url({{ item.thumbnail }});width: 100%;height: 100%;"></div>
+            <a ng-click="displayTertiary(item)" class="resources-grid-title">{{ item.title }}</a>
+            <a ng-click="displayTertiary(item)" class="resources-grid-type">{{ item.type}}</a>
+            <a ng-click="displayTertiary(item)" class="resources-grid-year">{{ item.date}}</a>
         </li>
 
 
@@ -55,54 +55,60 @@
 </div>
 </div>
 
+<!-- POPUP FOR EXHIBITION HIGHLIGHTS BELOW -->
+<div class="popup-highlights" role="alert">
+<div class=" tertiary-container">
 
 
+<!-- ADD THE YOUR HIGHLIGHT IMAGES AND DESCRIPTIONS HERE -->
+<div class="item-slider-container">
+  <div id="highlights-slider" >
+    <div class="highSlides" id="firstitemslide">
+      <div id="item-header">
 
-<div class="tertiary" role="alert">
-	<div class="tertiary-container">
-    <div class="loading text-muted" ng-hide="items"><fa name="spinner" size="5" spin></fa><br>Loading resources&hellip;</div>
-		<div id="item-header" ng-show="items">
-            <h1>RESOURCE TITLE</h1>
-            <h2>Monday 1 January 2017</h2>
-            <h3>Origin of item</h3>
-            <h3>Specific page origin</h3>
-        </div>
+        <h1 class="itemtitle"></h1>
+        <h2 class="itemdate"></h2>
+        <h3 class="itemtype"></h3>
 
-        <div class="item-slider-container">
-        	<div id="item-slider">
-                <div class="itemSlides">
-                    <div class="item">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu magna lorem. Maecenas efficitur nisl laoreet, ultrices metus in, suscipit risus. Mauris fermentum, dui ut hendrerit interdum, sapien leo mattis lorem, ut varius justo libero et lectus. Nullam auctor, odio sit amet finibus laoreet, ante magna gravida magna, sit amet posuere metus nisi non tellus. Sed congue volutpat risus et gravida. Sed non est lacus.
+      </div>
 
-                    Etiam consequat pellentesque est, eu mollis nibh dignissim non. Phasellus auctor urna augue. Vivamus maximus velit turpis, sed elementum libero tincidunt sit amet. Phasellus tincidunt pretium ante, eleifend gravida nunc facilisis ac. Sed pellentesque porta dapibus. Integer lacus velit, sagittis lacinia mi sed, porttitor finibus eros. Nunc at sagittis ipsum. Proin tempor augue quis turpis gravida volutpat.
-                    </div>
+      <img  id="itemimagesrc" height="100%" width="100%">
 
-                    <div class="item-caption">Albert Francis Lenertz, Aeroplane Jelly Song 1953–1960s, nla.cat-vn3885655, courtesy of McCormick Foods Australia Pty Ltd</div>
-                  </div>
-
-            <a class="item-prev" onclick="plusSlides(-1)"><img src="img/icon_previous.png"/> previous</a>
-			<a class="item-next" onclick="plusSlides(1)">next <img src="img/icon_next.png"/></a>
-                </div>
-
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-        </div>
-        <script src="js/high_slideshow.js"></script>
-	</div>
-
-    <div id="item-links">
-        <h1><a href="#">View digitised item at Trove <img src="img/icon-extLinks.png"></a></h1>
-        <h2>Part of <a href="#">TOPIC</a></h2>
     </div>
+    <div class="highSlides">
+      <div id="item-header">
 
-    <a href="#0" class="tertiary-close"><img src="img/icon_close.png" height="100%" width="100%"/></a>
-	</div>
-</div> <!-- TERTIARY CLOSE -->
+          <h1 class="itemtitle"></h1>
+          <h2 class="itemdate"></h2>
+          <h3 class="itemtype"></h3>
+      </div>
 
+      <div class="list-item itemdisplaytext" >
 
+      </div>
 
+      <div class="list-item-caption itemcaption"></div>
 
+    </div>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)"><img src="img/icon_previous.png" /> previous</a>
+  <a class="next" onclick="plusSlides(1)">next <img src="img/icon_next.png"/></a>
+
+</div>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+</div>
+    <script src="js/high_slideshow.js"></script>
+    <div id="list-item-links">
+      <h1><a href="#">View digitised item at Trove <img src="img/icon-extLinks.png"></a></h1>
+      <h2>Part of <a href="#">TOPIC</a></h2>
+    </div>
+    <img src="img/icon_close.png" height="100%" width="100%" class="tertiary-close"/>
+</div>
+</div>
 <script src="js/grid-list-view.js"></script>
 
     <div id="resources-footer">
