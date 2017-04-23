@@ -440,6 +440,11 @@ main {
     margin-top: 8%;
 }
 
+.tertiary-container .highSlides img {
+    height: 420px;
+    margin-top: 0!important;
+}
+
 .next {
     right: 44px;
 }
@@ -1126,7 +1131,7 @@ button {
     color: #000000;
     padding: 4px;
     position: absolute;
-    margin: 100px 0 0 17.5%;
+    margin: 0px 0 0 17.5%;
     width: 65%;
     font-family: Gilroy;
     font-weight: 300;
