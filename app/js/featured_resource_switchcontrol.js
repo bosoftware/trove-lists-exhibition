@@ -30,4 +30,19 @@ $('#base-nav-resources').click(function() {
     });
 });
 
+
+$('#base-nav-main').click(function() {
+    $('.resources').css({
+        'display': 'inline',
+    });
+    $('.featured').css({
+        'display': 'none',
+    });
+    $('.base-nav li:nth-child(2)').css({
+        'opacity': '0.5',
+    });
+    $('.base-nav li:nth-child(3)').css({
+        'opacity': '0.5',
+    });
+});
 });

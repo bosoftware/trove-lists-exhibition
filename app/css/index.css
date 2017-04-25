@@ -34,7 +34,7 @@ a {
 
 main {
     background-color: #FFFFFF;
-    height: 768px;
+    height: 100%;
     width: 100%;
     margin: 0px;
     padding: 0px;
@@ -47,7 +47,7 @@ main {
 
 /* Slideshow container */
 .slideshow-container {
-    height: 768px;
+    height: 90%;
     width: 90%;
     margin-left: 5%;
 	margin-top: 55px !important;
@@ -826,7 +826,7 @@ button {
     margin: -275px 0px 20px 32%;
     background-color: transparent;
     color: #000000;
-    width: 28.8%;
+    /*width: 28.8%;*/
     font-size: 40pt;
     font-family: Gilroy;
     font-weight: 800;
@@ -1330,4 +1330,10 @@ button {
 .main {
     height: 100%;
     z-index: 1;
+}
+
+#base-nav-featured,
+#base-nav-resources
+{
+	opacity: 0.5;
 }

@@ -55,13 +55,9 @@
 <div class="loading text-muted" ng-hide="lists"><fa name="spinner" size="5" spin></fa><br>Loading resources&hellip;</div>
     <div class="view-container" ng-show="lists">
       <div ng-view="" class="view-frame"></div>
-    </div>
-  </div>
-
-
       <div class="base-nav" style="z-index:100 !important;">
        <ul>
-          <li class="primary-close"><a ng-href="#/">{{exhibition}}</a></li>
+          <li id="base-nav-main" class="primary-close"><a ng-href="#/">{{exhibition}}</a></li>
 
            <li id="base-nav-featured"><a ng-href="#/topics/">FEATURED</a></li>
           <li id="base-nav-resources"><a ng-href="#/resources/">RESOURCES</a></li>
@@ -71,6 +67,11 @@
            </li> <!-- primary exhibition trigger -->
        </ul>
       </div>
+    </div>
+  </div>
+
+
+
 
 <section class="main"></section>
 
