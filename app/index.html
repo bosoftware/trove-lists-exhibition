@@ -7,7 +7,8 @@
  	 <meta name="description" content="Exhibition Application, powered by Trove">
   	<meta name="author" content="Trove">
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -58,15 +59,15 @@
   </div>
 
 
-      <div class="base-nav">
+      <div class="base-nav" style="z-index:100 !important;">
        <ul>
-          <li class="primary-close"><a ng-href="#/">THE SELL</a></li>
+          <li class="primary-close"><a ng-href="#/">{{exhibition}}</a></li>
 
            <li id="base-nav-featured"><a ng-href="#/topics/">FEATURED</a></li>
           <li id="base-nav-resources"><a ng-href="#/resources/">RESOURCES</a></li>
           <li><!-- EMPTY DIV FOR GREY LINE --></li>
-          <li><a class="grid-trigger" href="#0">
-              <img src="img/icon-trigger.png" width="100%" height="100%"/></a>
+          <li><a class="grid-trigger" href="#/topics/">
+              <img id="index-icon-grid" src="img/icon_grid-black.png" height="100%" width="100%"></a>
            </li> <!-- primary exhibition trigger -->
        </ul>
       </div>

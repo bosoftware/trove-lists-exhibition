@@ -378,13 +378,15 @@ main {
 /* Next & previous buttons */
 .prev, .next {
     position: fixed;
-    top: 45%;
+    top: 40%;
     color: #000000;
     font-family: Gilroy;
     font-weight: 300;
     font-size: 15pt;
     line-height: 40px;
     margin-left: -25px;
+		text-align: center;
+		vertical-align: middle;
 }
 
 .prev img, .next img {
