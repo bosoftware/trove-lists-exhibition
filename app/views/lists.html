@@ -28,9 +28,9 @@
               <!-- <img  class="featured-grid-thumbnail" ng-if="list.thumbnail" ng-src="{{ list.thumbnail }}" alt="Thumbnail for {{ list.title }}"> -->
             </a>
             <div class="featured-grid-title">{{ list.title }}</div>
-            <div class="featured-grid-number">{{$index+1}}</div>
+            <div class="featured-grid-item-numbers"><a ng-href="#/topics/{{ list.order }}">Browse {{ list.numberOfItems}} items</a></div>
             <div class="featured-grid-description">
-                <p>{{list.description}} </p>
+                <p>  <div ng-if="list.description" ng-bind-html="list.description | words:config.listSnippet"></div> </p>
             </div>
         </li>
 
