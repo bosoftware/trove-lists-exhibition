@@ -815,7 +815,7 @@ button {
 #featured-list-container .featured-list li, #resources-list-container .resources-list li {
     width: 30%;
     margin: 1.5% 0 0 0;
-    height: 275px;
+    /*height: 275px;*/
     background-color: #dedede;
 }
 
@@ -823,7 +823,7 @@ button {
 .featured-list .featured-grid-title, .resources-list .resources-grid-title {
     position: absolute;
     height: 50px;
-    margin: -275px 0px 20px 32%;
+    margin: -380px 0px 20px 32%;
     background-color: transparent;
     color: #000000;
     /*width: 28.8%;*/
@@ -832,11 +832,40 @@ button {
     font-weight: 800;
     line-height: 50px;
 }
+.featured-grid .featured-grid-item-numbers{
+	display: none;
+}
+.featured-list .featured-grid-item-numbers {
+    position: absolute;
+    height: 50px;
+    margin: -280px 0px 20px 32%;
+    background-color: transparent;
+    color: #000000;
+    /*width: 28.8%;*/
+    font-size: 20pt;
+    font-family: Gilroy;
+    font-weight: 200;
+    line-height: 50px;
+}
+
+.featured-list  .featured-grid-description p {
+	position: absolute;
+	height: 50px;
+	margin: -250px 0px 20px 32%;
+	background-color: transparent;
+	color: #000000;
+	/*width: 28.8%;*/
+	font-size: 10pt;
+	font-family: Gilroy;
+	font-weight: 100;
+	line-height: 50px;
+}
 
 .featured-list .featured-grid-number, .resources-list .resources-grid-number {
     display: none;
 }
 
+/*
 .featured-grid-description {
     width: 65%;
     float: left;
@@ -845,23 +874,16 @@ button {
     margin: -275px 0px 20px 30%;
     height: 270px;
 }
-
+*/
 .featured-grid .featured-grid-description {
     display: none;
 }
 
-.featured-grid-description p {
-    width: 90%
-    font-family: Gilroy !important;
-    font-weight: 300;
-    font-size: 14pt;
-    margin-left: 20px;
-    margin-top: 60px;
-}
+
 
 .resources-list .resources-grid-type {
     position: absolute;
-    margin: -240px 0px 20px 32%;
+    margin: -340px 0px 20px 32%;
     background-color: transparent;
     color: #000000;
     font-size: 20pt;
@@ -872,7 +894,7 @@ button {
 }
 .resources-list .resources-grid-year {
     position: absolute;
-    margin: -200px 0px 20px 32%;
+    margin: -300px 0px 20px 32%;
     background-color: transparent;
     color: #000000;
     font-size: 20pt;
