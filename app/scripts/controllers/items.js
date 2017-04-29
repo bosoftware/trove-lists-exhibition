@@ -17,20 +17,35 @@ angular.module('trovelistsApp')
         $scope.totalDisplayed += 20;
       }
     };
-    $scope.displayTertiary = function(item){
+    $scope.displayPrevTertiary = function(){
+      var index = $scope.item.order-1;
+      if (index<=0){
+        index = $scope.items.length-1;
+      }
+      $scope.displayTertiary(index);
+    }
+    $scope.displayNextTertiary = function(){
+      var index = $scope.item.order+1;
+      if (index>=$scope.items.length){
+        index=0;
+      }
+      $scope.displayTertiary(index);
+    }
+    $scope.displayTertiary = function(order){
       event.preventDefault();
+
+      var item = $filter('findById')($rootScope.items, order);
+      $('#itemprev').attr('ng-click','displayTertiary('+order-1+')');
+      $('#itemnext').attr('ng-click','displayTertiary('+order+1+')');
+$('.itemdisplaytext').html('');
       setItem(item);
       $('.popup-highlights').addClass('is-visible');
       if (item.thumbnail!=undefined){
         $('#itemimagesrc').attr('src',item.thumbnail);
-        if(!$('#firstitemslide').hasClass('highSlides')) {
-          $('#firstitemslide').addClass('highSlides');
-        }
+        $('#itemimagesrc').css('display','block');
       }else{
-        if($('#firstitemslide').hasClass('highSlides')) {
-          $('#firstitemslide').removeClass('highSlides');
-        }
-        $('#firstitemslide').css('display','none');
+
+        $('#itemimagesrc').css('display','none');
 
       }
       $('.itemtitle').html(item.title);

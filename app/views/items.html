@@ -43,10 +43,10 @@
 
     <ul class="resources-grid">
         <li ng-repeat="item in items | filter:query | orderBy:sort ">
-            <div ng-click="displayTertiary(item)" class="resource-grid-thumbnail resource-grid-thumbnail-div" style="background-image: url({{ item.thumbnail }});width: 100%;height: 100%;"></div>
-            <a ng-click="displayTertiary(item)" class="resources-grid-title">{{ item.title }}</a>
-            <a ng-click="displayTertiary(item)" class="resources-grid-type">{{ item.type}}</a>
-            <a ng-click="displayTertiary(item)" class="resources-grid-year">{{ item.date}}</a>
+            <div ng-click="displayTertiary(item.order)" class="resource-grid-thumbnail resource-grid-thumbnail-div" style="background-image: url({{ item.thumbnail }});width: 100%;height: 100%;"></div>
+            <a ng-click="displayTertiary(item.order)" class="resources-grid-title">{{ item.title }}</a>
+            <a ng-click="displayTertiary(item.order)" class="resources-grid-type">{{ item.type}}</a>
+            <a ng-click="displayTertiary(item.order)" class="resources-grid-year">{{ item.date}}</a>
         </li>
 
 
@@ -63,18 +63,7 @@
 <!-- ADD THE YOUR HIGHLIGHT IMAGES AND DESCRIPTIONS HERE -->
 <div class="item-slider-container">
   <div id="highlights-slider" >
-    <div class="highSlides" id="firstitemslide">
-      <div id="item-header">
 
-        <h1 class="itemtitle"></h1>
-        <h2 class="itemdate"></h2>
-        <h3 class="itemtype"></h3>
-
-      </div>
-
-      <img  id="itemimagesrc" height="100%" width="100%">
-
-    </div>
     <div class="highSlides">
       <div id="item-header">
 
@@ -82,18 +71,19 @@
           <h2 class="itemdate"></h2>
           <h3 class="itemtype"></h3>
       </div>
-
+      <div id="item-details">
+      <img  id="itemimagesrc" height="100%" width="100%">
       <div class="list-item itemdisplaytext" >
 
       </div>
 
       <div class="list-item-caption itemcaption"></div>
-
+    </div>
     </div>
   </div>
 
-  <a class="prev" onclick="plusSlides(-1)"><img src="img/icon_previous.png" /> previous</a>
-  <a class="next" onclick="plusSlides(1)">next <img src="img/icon_next.png"/></a>
+  <a id="itemprev" class="prev" ng-click="displayPrevTertiary()"><img src="img/icon_previous.png" /> previous</a>
+  <a id="itemnext" class="next" ng-click="displayNextTertiary()">next <img src="img/icon_next.png"/></a>
 
 </div>
 
