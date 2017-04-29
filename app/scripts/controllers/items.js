@@ -35,8 +35,7 @@ angular.module('trovelistsApp')
       event.preventDefault();
       $scope.isloading=true;
       var item = $filter('findById')($rootScope.items, order);
-      $('#itemprev').attr('ng-click','displayTertiary('+order-1+')');
-      $('#itemnext').attr('ng-click','displayTertiary('+order+1+')');
+    $('#viewitemurl').attr('href',item.url);
 $('.itemdisplaytext').html('');
       setItem(item);
       $('.popup-highlights').addClass('is-visible');
