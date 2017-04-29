@@ -56,7 +56,7 @@ main {
     object-fit:cover;
     }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
     .slideshow-container {
         height: 600px;
         width: 75%;
@@ -244,7 +244,7 @@ main {
     transform: translateY(0);
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
     .popup-description-container {
         height: 480px;
         width: 70%;
@@ -432,7 +432,7 @@ main {
 }
 
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
 .popup-highlights{
     background-color: #ffffff;
     }
@@ -579,7 +579,7 @@ main {
 }
 
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
  .primary {
     height:730px;
     }
@@ -708,7 +708,7 @@ button {
     padding: 5px;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
     .featured, .resources {
         height: 708px;
         }
@@ -794,9 +794,9 @@ button {
 .resources-grid .resources-grid-title, .resources-grid .resources-grid-type, .resources-grid .resources-grid-year {
     display: none;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
     #featured-list-container .featured-grid li, #resources-list-container .resources-grid li {
-        height: 375px;
+        height: 375px !important;
         }
 
     .featured-grid .featured-grid-title {
@@ -804,18 +804,36 @@ button {
         }
 
     .featured-grid .featured-grid-number {
-        margin:-50px 0 0 25%;
+        margin:-50px 0 0 25% !important;
         }
 
     #featured-list-container .featured-list li, #resources-list-container .resources-list li {
-        height: 375px;
+        height: 375px !important;
     }
+
+
+
+		.featured-list .featured-grid-title, .resources-list .resources-grid-title{
+			  margin: -375px 0px 20px 32% !important;
+		}
+		.resources-list .resources-grid-type{
+			margin:-275px 0px 20px 32% !important;
+		}
+		.resources-list .resources-grid-year{
+			margin:-225px 0px 20px 32% !important;
+		}
+		.featured-list .featured-grid-item-numbers{
+			margin: -275px 0px 20px 32% !important;
+		}
+		.featured-list  .featured-grid-description p {
+			margin: -225px 0px 20px 32% !important;
+		}
 }
 
 #featured-list-container .featured-list li, #resources-list-container .resources-list li {
     width: 30%;
     margin: 1.5% 0 0 0;
-    /*height: 275px;*/
+    height: 275px;
     background-color: #dedede;
 }
 
@@ -823,10 +841,10 @@ button {
 .featured-list .featured-grid-title, .resources-list .resources-grid-title {
     position: absolute;
     height: 50px;
-    margin: -380px 0px 20px 32%;
+    margin: -275px 0px 20px 32%;
     background-color: transparent;
     color: #000000;
-    /*width: 28.8%;*/
+    width: 90%;
     font-size: 40pt;
     font-family: Gilroy;
     font-weight: 800;
@@ -838,7 +856,7 @@ button {
 .featured-list .featured-grid-item-numbers {
     position: absolute;
     height: 50px;
-    margin: -280px 0px 20px 32%;
+    margin: -175px 0px 20px 32%;
     background-color: transparent;
     color: #000000;
     /*width: 28.8%;*/
@@ -851,7 +869,7 @@ button {
 .featured-list  .featured-grid-description p {
 	position: absolute;
 	height: 50px;
-	margin: -250px 0px 20px 32%;
+	margin: -125px 0px 20px 32%;
 	background-color: transparent;
 	color: #000000;
 	/*width: 28.8%;*/
@@ -883,7 +901,7 @@ button {
 
 .resources-list .resources-grid-type {
     position: absolute;
-    margin: -340px 0px 20px 32%;
+    margin: -175px 0px 20px 32%;
     background-color: transparent;
     color: #000000;
     font-size: 20pt;
@@ -894,7 +912,7 @@ button {
 }
 .resources-list .resources-grid-year {
     position: absolute;
-    margin: -300px 0px 20px 32%;
+    margin: -125px 0px 20px 32%;
     background-color: transparent;
     color: #000000;
     font-size: 20pt;
@@ -1256,7 +1274,7 @@ button {
     color: #609544;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
     .item-caption {
     margin: 270px 0 0 17.5%;
     }
@@ -1338,7 +1356,7 @@ button {
     margin-right: 50px;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
    #featured-footer, #resources-footer {
     height: 240px;
     }
