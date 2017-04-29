@@ -65,13 +65,14 @@
   <div id="highlights-slider" >
 
     <div class="highSlides">
-      <div id="item-header">
+      <div class="loading text-muted" ng-show="isloading"><fa name="spinner" size="5" spin></fa><br>Loading resources&hellip;</div>
+      <div id="item-header" ng-hide="isloading">
 
           <h1 class="itemtitle"></h1>
           <h2 class="itemdate"></h2>
           <h3 class="itemtype"></h3>
       </div>
-      <div id="item-details">
+      <div id="item-details" ng-hide="isloading">
       <img  id="itemimagesrc" height="100%" width="100%">
       <div class="list-item itemdisplaytext" >
 

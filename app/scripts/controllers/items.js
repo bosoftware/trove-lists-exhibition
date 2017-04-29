@@ -33,7 +33,7 @@ angular.module('trovelistsApp')
     }
     $scope.displayTertiary = function(order){
       event.preventDefault();
-
+      $scope.isloading=true;
       var item = $filter('findById')($rootScope.items, order);
       $('#itemprev').attr('ng-click','displayTertiary('+order-1+')');
       $('#itemnext').attr('ng-click','displayTertiary('+order+1+')');
@@ -64,6 +64,7 @@ $('.itemdisplaytext').html('');
       if (item.type === 'newspaper') {
         $http.jsonp('http://api.trove.nla.gov.au/newspaper/' + item.id + '?encoding=json&reclevel=full&include=articletext&key=' + window.troveAPIKey + '&callback=JSON_CALLBACK', {cache: true})
           .then(function successCallback(response) {
+            $scope.isloading=false;
             //var paras = response.data.article.articleText.match(/<p>.*?<\/p>/g);
             //$scope.articleText = paras.slice(0,5).join('') + '&hellip;';
             $scope.articleText = response.data.article.articleText;
@@ -73,6 +74,7 @@ $('.itemdisplaytext').html('');
       } else if (item.type === 'work' && item.holdings === 1) {
         $http.jsonp('http://api.trove.nla.gov.au/work/' + item.id + '?encoding=json&reclevel=full&include=holdings&key=' + window.troveAPIKey + '&callback=JSON_CALLBACK', {cache: true})
           .then(function successCallback(response) {
+            $scope.isloading=false;
             var nuc;
             try {
               nuc = response.data.work.holding[0].nuc;
@@ -86,6 +88,8 @@ $('.itemdisplaytext').html('');
               });
             }
         });
+      }else{
+        $scope.isloading=false;
       }
     };
     $scope.showText = function(length) {
