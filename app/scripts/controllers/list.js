@@ -37,8 +37,10 @@ $('.itemdisplaytext').html('');
       if (item.thumbnail!=undefined){
         $('#itemimagesrc').attr('src',item.thumbnail);
         $('#itemimagesrc').css('display','block');
-      }else{
 
+        //$('#item-image').attr('style',"background-image: url("+ item.thumbnail+");width: 100%;height: 100%;");
+      }else{
+$('#itemimagesrc').attr('src','#/');
         $('#itemimagesrc').css('display','none');
 
       }

@@ -282,6 +282,7 @@ main {
 .popup-highlights.is-visible {
     opacity: 1;
     visibility: visible;
+		overflow: scroll;
 }
 
 .popup-highlights-container {
@@ -595,7 +596,7 @@ main {
 
 .featured, .resources  {
     width: 100%;
-    height: 708px;
+    height: 100%;
     background-color: #ffffff;
     margin:88px 0 0 0px;
     float: left;
@@ -665,7 +666,7 @@ button {
 
 #resources-secondary {
     width: 100%;
-    height: 50px;
+    height: 60px;
     background: #ffffff;
     margin: 95px 0 0 10px;
     float: left;
@@ -727,6 +728,7 @@ button {
     #resources-secondary {
         position: relative;
         margin-top: 0px;
+				  height: 50px !important;
     }
 }
 
@@ -765,7 +767,7 @@ button {
 .featured-grid .featured-grid-title {
     position: absolute;
     height: 50px;
-    margin:225px 0 0 0 !important;
+    margin:-100px 0 0 0;
     background-color: rgba(0,0,0,0.4);
     width: 30%;
     text-align: center;
@@ -1073,7 +1075,7 @@ button {
 .tertiary-container {
     position: relative;
     width: 100%;
-    height: 672px;
+    height: 100%;
     margin: 105px 0 0 0;
     background: #ffffff;
     z-index: 20;
@@ -1172,7 +1174,7 @@ button {
 .list-item {
     color: #000000;
     padding: 4px;
-    position: absolute;
+    /*position: absolute;*/
     margin: 0px 0 0 17.5%;
     width: 65%;
     font-family: Gilroy;
@@ -1180,12 +1182,21 @@ button {
     font-size: 14pt;
     float: left;
 }
-
+#item-details{
+	display:table-cell;
+	 align-items: center; /* Vertical center alignment */
+	 justify-content: center; /* Horizontal center alignment */
+	 width: 100vw;
+	 height: 100vh;
+ }
+ #item-image{
+	   margin: 0 0 0 17.5%;
+ }
 .list-item-caption {
     color: #000000;
     padding: 4px;
-    position: absolute;
-    margin: 430px 0 0 17.5%;
+    /*position: absolute;*/
+    margin: 0 0 0 17.5%;
     width: 65%;
     font-family: Gilroy;
     font-weight: 300;
@@ -1332,7 +1343,7 @@ button {
 #featured-footer-secondary, #resources-footer-secondary {
     height: 50%;
     width: 40%;
-    margin-top: 6%;
+    margin-top: 3%;
     float: right;
 }
 
@@ -1377,3 +1388,10 @@ button {
 {
 	opacity: 0.5;
 }
+
+.w3-animate-fading{animation:fading 10s infinite}@keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
+.w3-animate-opacity{animation:opac 0.8s}@keyframes opac{from{opacity:0} to{opacity:1}}
+.w3-animate-top{position:relative;animation:animatetop 0.4s}@keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
+.w3-animate-left{position:relative;animation:animateleft 0.4s}@keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
+.w3-animate-right{position:relative;animation:animateright 0.4s}@keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+.w3-animate-bottom{position:relative;animation:animatebottom 0.4s}@keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
