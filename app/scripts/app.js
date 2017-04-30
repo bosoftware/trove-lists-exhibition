@@ -77,9 +77,10 @@ app.controller('BaseCtrl', function($scope, $document, $location,$compile) {
     $scope.credit = angular.element('#exhibition-credit').html();
     $scope.highlights = angular.element('#exhibition-highlights').html();
     $scope.listLinks = angular.element('.list-link');
-    $scope.backgroundimage1=angular.element('#background-image1').html();
-    $scope.backgroundimage2=angular.element('#background-image2').html();
-    $scope.backgroundimage3=angular.element('#background-image3').html();
+    $scope.backgroundimages=$('div[id^=background-image]');
+    $scope.highlightimages=$('div[id^=highlights-image]');
+    $scope.highlightcaptions=$('div[id^=highlights-caption]');
+
 
     $scope.config = window.config;
   }

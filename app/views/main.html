@@ -11,20 +11,11 @@
     </ul>
 </div>
 
-<div class="homeSlides">
-    <img src="{{backgroundimage1}}" height="100%" width="100%"/>
+<div class="homeSlides" ng-repeat="backgroundimage in backgroundimages">
+    <img src="{{backgroundimage.innerHTML}}" height="100%" width="100%"/>
     <div class="slide-caption"></div>
 </div>
 
-<div class="homeSlides">
-    <img src="{{backgroundimage2}}" height="100%" width="100%"/>
-    <div class="slide-caption"></div>
-</div>
-
-<div class="homeSlides">
-    <img src="{{backgroundimage3}}" height="100%" width="100%"/>
-    <div class="slide-caption"></div>
-</div>
 
 </div>
 
@@ -69,10 +60,10 @@
 <div class="highlights-slider-container">
   <div class="loading text-muted" ng-hide="lists"><fa name="spinner" size="5" spin></fa><br>Loading resources&hellip;</div>
   <div id="highlights-slider" ng-show="lists">
-    <div class="highSlides" ng-repeat="(id, list) in lists">
-      <div class="numbertext">{{$index+1}} / {{lists.length}}</div>
-      <img ng-src="{{ list.thumbnail }}" height="100%" width="100%">
-      <div class="highSlides-caption">{{ list.title }}</div>
+    <div class="highSlides" ng-repeat="highimage in highlightimages">
+      <div class="numbertext">{{$index+1}} / {{highlightimages.length}}</div>
+      <img ng-src="{{ highimage.innerHTML }}" height="100%" width="100%">
+      <div class="highSlides-caption">{{ highlightcaptions[index].innerHTML }}</div>
     </div>
 
   </div>
@@ -82,7 +73,7 @@
 </div>
 
 <div style="text-align:center">
-<span class="dot" ng-repeat="(id, list) in lists" ng-click="currentSlide($index+1)"></span>
+<span class="dot" ng-repeat="highimage in highlightimages" ng-click="currentSlide($index+1)"></span>
 </div>
     <script src="js/high_slideshow.js"></script>
 </div>
