@@ -711,7 +711,7 @@ button {
 
 @media screen and (min-width: 1025px) {
     .featured, .resources {
-        height: 708px;
+        height: 100vh;
         }
 
      #featured-header, #resources-header {

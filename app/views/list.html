@@ -32,7 +32,7 @@
 
       <ul class="resources-list">
         <li ng-repeat="item in listitems | itemsInList:list.order| filter:query | orderBy:sort ">
-          <div ng-click="displayTertiary($index)" class="resource-grid-thumbnail resource-grid-thumbnail-div" style="background-image: url({{ item.thumbnail }});width: 100%;height: 100%;"></div>
+          <div ng-click="displayTertiary($index)" class="resource-grid-thumbnail resource-grid-thumbnail-div" style="background-image: url({{ item.thumbnail }});background-size:cover;"></div>
           <a ng-click="displayTertiary($index)" class="resources-grid-title">{{ item.title }}</a>
           <a ng-click="displayTertiary($index)" class="resources-grid-type">{{ item.type}}</a>
           <a ng-click="displayTertiary($index)" class="resources-grid-year">{{ item.date}}</a>
