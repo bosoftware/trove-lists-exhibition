@@ -93,12 +93,14 @@ app.controller('ReloadCtrl', function($rootScope, $location) {
 
 app.factory('ListsDataFactory', function($rootScope, $document, $http) {
   var listsDataFactory = {};
-  var processListItems = function(listItems, listId, items) {
+  var processListItems = function(listItems, listId, items,listTitle) {
     var order = items.length + 1;
     angular.forEach(listItems, function(listItem) {
       var item = {};
       item.order = order;
       item.list = listId;
+      item.listTitle=listTitle;
+      item.note=listItem.note;
       item.rank = 0.5 - Math.random();
       angular.forEach(listItem, function(details, itemType) {
         if (itemType === 'article') {
@@ -119,6 +121,7 @@ app.factory('ListsDataFactory', function($rootScope, $document, $http) {
           item.title = details.title;
           item.id = details.id;
           item.format = details.type;
+          item.type = item.format[0];
           item.url = details.troveUrl;
           item.date = details.issued;
           if (typeof details.contributor !== 'undefined') {
@@ -201,7 +204,7 @@ console.log(items);
     var lists = [];
     angular.forEach(responses, function(response) {
       var listDetails = processList(response.data.list[0], order);
-      items = processListItems(listDetails[1], order, items);
+      items = processListItems(listDetails[1], order, items,listDetails[0].title);
       lists.push(listDetails[0]);
       order++;
     });
