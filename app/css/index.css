@@ -368,6 +368,21 @@ main {
 .itemSlides
 {display:none}
 
+@media screen and (max-height: 769px){
+	.highSlides img,
+	.itemSlides img
+	 {
+
+	    margin-top: 5px !important;
+
+	}
+#list-item-links h1 a{
+	font-size: 10px !important;
+}
+#list-item-links h2{
+	font-size: 12px !important;
+}
+}
 .highSlides img,
 .itemSlides img
  {

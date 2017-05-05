@@ -165,7 +165,7 @@ app.factory('ListsDataFactory', function($rootScope, $document, $http) {
         order++;
       }
     });
-console.log(items);
+//console.log(items);
     return items;
   };
   var processList = function(data, order) {
