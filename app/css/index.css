@@ -382,6 +382,9 @@ main {
 #list-item-links h2{
 	font-size: 12px !important;
 }
+#featured-header h1, #resources-header h1{
+	font-size: 30pt !important;
+}
 }
 .highSlides img,
 .itemSlides img
