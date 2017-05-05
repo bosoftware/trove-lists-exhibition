@@ -134,7 +134,7 @@ app.factory('ListsDataFactory', function($rootScope, $document, $http) {
             if (link.linktype === 'thumbnail') {
               item.thumbnail = link.value;
               if (item.thumbnail.indexOf('-t')>0){
-                item.thumbnail = item.thumbnail.substring(0,item.thumbnail.length-2)+"/image";
+                item.thumbnail = item.thumbnail.substring(0,item.thumbnail.length-2)+"-v";
               }
             } else if (link.linktype === 'fulltext') {
               item.fulltext = link.value;
@@ -176,7 +176,7 @@ console.log(items);
       if (data.identifier.value.match(/^http/)) {
         list.thumbnail = data.identifier.value;
         if (list.thumbnail.indexOf('-t')>0){
-          list.thumbnail = list.thumbnail.substring(0,list.thumbnail.length-2)+"/image";
+          list.thumbnail = list.thumbnail.substring(0,list.thumbnail.length-2)+"-v";
         }
       } else {
         list.thumbnail = 'http://trove.nla.gov.au' + data.identifier.value;
