@@ -377,13 +377,20 @@ main {
 
 	}
 #list-item-links h1 a{
-	font-size: 10px !important;
+	font-size: 12px !important;
 }
 #list-item-links h2{
-	font-size: 12px !important;
+	font-size: 13px !important;
 }
 #featured-header h1, #resources-header h1{
 	font-size: 30pt !important;
+}
+
+#resources-footer{
+	margin-top:150px !important;
+}
+.featured-header-icons, .resources-header-icons{
+	width: 30% !important;
 }
 }
 .highSlides img,
