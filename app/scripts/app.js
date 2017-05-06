@@ -100,7 +100,7 @@ app.factory('ListsDataFactory', function($rootScope, $document, $http) {
       item.order = order;
       item.list = listId;
       item.listTitle=listTitle;
-      
+
       item.rank = 0.5 - Math.random();
       angular.forEach(listItem, function(details, itemType) {
         if (itemType === 'article') {
@@ -193,7 +193,7 @@ app.factory('ListsDataFactory', function($rootScope, $document, $http) {
     var promises = [];
     angular.forEach(listLinks, function(link) {
       var listID = angular.element(link).attr('href').match(/id=(\d+)/)[1];
-      var request = $http.jsonp('http://api.trove.nla.gov.au/list/' + listID + '?encoding=json&reclevel=full&include=listItems&key=' + window.troveAPIKey + '&callback=JSON_CALLBACK', {cache: true});
+      var request = $http.jsonp(troveApiUrl+'/list/' + listID + '?encoding=json&reclevel=full&include=listItems&key=' + window.troveAPIKey + '&callback=JSON_CALLBACK', {cache: true});
       promises.push(request);
     });
     return promises;

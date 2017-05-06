@@ -61,7 +61,7 @@ $('#itemimagesrc').attr('src','#/');
       //var item = $filter('findById')($rootScope.items, $routeParams.order);
       $scope.item = item;
       if (item.type === 'newspaper') {
-        $http.jsonp('http://api.trove.nla.gov.au/newspaper/' + item.id + '?encoding=json&reclevel=full&include=articletext&key=' + window.troveAPIKey + '&callback=JSON_CALLBACK', {cache: true})
+        $http.jsonp(troveApiUrl+'/newspaper/' + item.id + '?encoding=json&reclevel=full&include=articletext&key=' + window.troveAPIKey + '&callback=JSON_CALLBACK', {cache: true})
           .then(function successCallback(response) {
             $scope.isloading=false;
             //var paras = response.data.article.articleText.match(/<p>.*?<\/p>/g);
@@ -71,7 +71,7 @@ $('#itemimagesrc').attr('src','#/');
             $scope.showText('snippet');
         });
       } else if (item.type === 'work' && item.holdings === 1) {
-        $http.jsonp('http://api.trove.nla.gov.au/work/' + item.id + '?encoding=json&reclevel=full&include=holdings&key=' + window.troveAPIKey + '&callback=JSON_CALLBACK', {cache: true})
+        $http.jsonp(troveApiUrl+'/work/' + item.id + '?encoding=json&reclevel=full&include=holdings&key=' + window.troveAPIKey + '&callback=JSON_CALLBACK', {cache: true})
           .then(function successCallback(response) {
             $scope.isloading=false;
             var nuc;
@@ -81,7 +81,7 @@ $('#itemimagesrc').attr('src','#/');
               //Do nothing
             }
             if (typeof nuc !== 'undefined') {
-              $http.jsonp('http://api.trove.nla.gov.au/contributor/' + nuc + '?encoding=json&key=' + window.troveAPIKey + '&callback=JSON_CALLBACK', {cache: true})
+              $http.jsonp(troveApiUrl+'/contributor/' + nuc + '?encoding=json&key=' + window.troveAPIKey + '&callback=JSON_CALLBACK', {cache: true})
                 .then(function successCallback(response) {
                   $scope.repository = response.data.contributor.name.replace(/\.$/, '');
               });

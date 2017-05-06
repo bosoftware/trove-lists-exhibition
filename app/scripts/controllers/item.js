@@ -37,7 +37,7 @@ angular.module('trovelistsApp')
       var item = $filter('findById')($rootScope.items, $routeParams.order);
       $scope.item = item;
       if (item.type === 'newspaper') {
-        $http.jsonp('http://api.trove.nla.gov.au/newspaper/' + item.id + '?encoding=json&reclevel=full&include=articletext&key=' + window.troveAPIKey + '&callback=JSON_CALLBACK', {cache: true})
+        $http.jsonp(troveApiUrl+'/newspaper/' + item.id + '?encoding=json&reclevel=full&include=articletext&key=' + window.troveAPIKey + '&callback=JSON_CALLBACK', {cache: true})
           .then(function successCallback(response) {
             //var paras = response.data.article.articleText.match(/<p>.*?<\/p>/g);
             //$scope.articleText = paras.slice(0,5).join('') + '&hellip;';
@@ -46,7 +46,7 @@ angular.module('trovelistsApp')
             $scope.showText('snippet');
         });
       } else if (item.type === 'work' && item.holdings === 1) {
-        $http.jsonp('http://api.trove.nla.gov.au/work/' + item.id + '?encoding=json&reclevel=full&include=holdings&key=' + window.troveAPIKey + '&callback=JSON_CALLBACK', {cache: true})
+        $http.jsonp(troveApiUrl+'/work/' + item.id + '?encoding=json&reclevel=full&include=holdings&key=' + window.troveAPIKey + '&callback=JSON_CALLBACK', {cache: true})
           .then(function successCallback(response) {
             var nuc;
             try {
@@ -55,7 +55,7 @@ angular.module('trovelistsApp')
               //Do nothing
             }
             if (typeof nuc !== 'undefined') {
-              $http.jsonp('http://api.trove.nla.gov.au/contributor/' + nuc + '?encoding=json&key=' + window.troveAPIKey + '&callback=JSON_CALLBACK', {cache: true})
+              $http.jsonp(troveApiUrl+'/contributor/' + nuc + '?encoding=json&key=' + window.troveAPIKey + '&callback=JSON_CALLBACK', {cache: true})
                 .then(function successCallback(response) {
                   $scope.repository = response.data.contributor.name.replace(/\.$/, '');
               });
