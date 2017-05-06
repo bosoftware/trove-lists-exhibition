@@ -20,14 +20,14 @@ angular.module('trovelistsApp')
     $scope.displayPrevTertiary = function(){
       var index = $scope.item.order-1;
       if (index<=0){
-        index = $scope.items.length-1;
+        index = $scope.items.length;
       }
       $scope.displayTertiary(index);
     }
     $scope.displayNextTertiary = function(){
       var index = $scope.item.order+1;
       if (index>=$scope.items.length){
-        index=0;
+        index=1;
       }
       $scope.displayTertiary(index);
     }
@@ -35,9 +35,10 @@ angular.module('trovelistsApp')
       event.preventDefault();
       $scope.isloading=true;
       var item = $filter('findById')($rootScope.items, order);
+      $scope.item = item;
     $('#viewitemurl').attr('href',item.url);
-$('.itemdisplaytext').html(item.note);
-      setItem(item);
+
+      //setItem(item);
       $('.popup-highlights').addClass('is-visible');
       if (item.thumbnail!=undefined){
         $('#itemimagesrc').attr('src',item.thumbnail);
@@ -56,6 +57,8 @@ $('.itemdisplaytext').html(item.note);
         $('.itemcaption').html("");
       }
       showSlides(1);
+      $('.itemdisplaytext').html(item.note);
+      $scope.isloading=false;
     };
     var setItem = function(item) {
       //var item = $filter('findById')($rootScope.items, $routeParams.order);
@@ -99,7 +102,7 @@ $('.itemdisplaytext').html(item.note);
         $scope.displayText = $scope.articleText;
         $scope.fullText = true;
       }
-      
+
     };
     if (typeof $rootScope.items === 'undefined' && $rootScope.failed !== true) {
         var tries = 1;

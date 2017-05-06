@@ -100,7 +100,7 @@ app.factory('ListsDataFactory', function($rootScope, $document, $http) {
       item.order = order;
       item.list = listId;
       item.listTitle=listTitle;
-      item.note=listItem.note;
+      
       item.rank = 0.5 - Math.random();
       angular.forEach(listItem, function(details, itemType) {
         if (itemType === 'article') {

@@ -387,11 +387,9 @@ main {
 }
 
 #resources-footer{
-	margin-top:150px !important;
+	margin-top:200px !important;
 }
-.featured-header-icons, .resources-header-icons{
-	width: 30% !important;
-}
+
 }
 .highSlides img,
 .itemSlides img
@@ -662,7 +660,7 @@ main {
 
 .featured-header-icons, .resources-header-icons {
     float: right;
-    width: 20%;
+    width: 30%;
     list-style-type: none;
     margin: 30px 35px 0 0px;
     padding: 0;
