@@ -74,14 +74,13 @@ app.controller('BaseCtrl', function($scope, $document, $location,$compile) {
     $scope.tagline = angular.element('#exhibition-tagline').html();
     $scope.description = angular.element('#exhibition-description').html();
     $scope.modeldescription = angular.element('#exhibition-model-description').html();
-    $scope.credit = angular.element('#exhibition-credit').html();
+    $scope.footer = angular.element('#exhibition-footer').html();
     $scope.highlights = angular.element('#exhibition-highlights').html();
     $scope.listLinks = angular.element('.list-link');
     $scope.backgroundimages=$('div[id^=background-image]');
     $scope.highlightimages=$('div[id^=highlights-image]');
     $scope.highlightcaptions=$('div[id^=highlights-caption]');
-
-
+  
     $scope.config = window.config;
   }
 });
