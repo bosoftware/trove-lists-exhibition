@@ -17,21 +17,21 @@ angular.module('trovelistsApp')
         $scope.totalDisplayed += 20;
       }
     };
-    $scope.displayPrevTertiary = function(){
+    $scope.displayPrevTertiary = function(event){
       var index = $scope.item.order-1;
       if (index<=0){
         index = $scope.items.length;
       }
-      $scope.displayTertiary(index);
+      $scope.displayTertiary(index,event);
     }
-    $scope.displayNextTertiary = function(){
+    $scope.displayNextTertiary = function(event){
       var index = $scope.item.order+1;
       if (index>=$scope.items.length){
         index=1;
       }
-      $scope.displayTertiary(index);
+      $scope.displayTertiary(index,event);
     }
-    $scope.displayTertiary = function(order){
+    $scope.displayTertiary = function(order,event){
       event.preventDefault();
       $scope.isloading=true;
       var item = $filter('findById')($rootScope.items, order);

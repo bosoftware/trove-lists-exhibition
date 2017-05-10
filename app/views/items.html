@@ -43,10 +43,10 @@
 
     <ul class="resources-grid">
         <li ng-repeat="item in items | filter:query | orderBy:sort ">
-            <div ng-click="displayTertiary(item.order)" class="resource-grid-thumbnail resource-grid-thumbnail-div" style="background-image: url({{ item.thumbnail }});background-size:cover;"></div>
-            <a ng-click="displayTertiary(item.order)" class="resources-grid-title">{{ item.title }}</a>
-            <a ng-click="displayTertiary(item.order)" class="resources-grid-type">{{ item.type}}</a>
-            <a ng-click="displayTertiary(item.order)" class="resources-grid-year">{{ item.date}}</a>
+            <div ng-click="displayTertiary(item.order,$event)" class="resource-grid-thumbnail resource-grid-thumbnail-div" style="background-image: url({{ item.thumbnail }});background-size:cover;"></div>
+            <a ng-click="displayTertiary(item.order,$event)" class="resources-grid-title">{{ item.title }}</a>
+            <a ng-click="displayTertiary(item.order,$event)" class="resources-grid-type">{{ item.type}}</a>
+            <a ng-click="displayTertiary(item.order,$event)" class="resources-grid-year">{{ item.date}}</a>
         </li>
 
 
@@ -83,8 +83,8 @@
     </div>
   </div>
 
-  <a id="itemprev" class="prev" ng-click="displayPrevTertiary()"><img src="img/icon_previous.png" /> previous</a>
-  <a id="itemnext" class="next" ng-click="displayNextTertiary()">next <img src="img/icon_next.png"/></a>
+  <a id="itemprev" class="prev" ng-click="displayPrevTertiary($event)"><img src="img/icon_previous.png" /> previous</a>
+  <a id="itemnext" class="next" ng-click="displayNextTertiary($event)">next <img src="img/icon_next.png"/></a>
 
 </div>
 
@@ -101,7 +101,7 @@
 </div>
 <div id="resources-footer" >
     <div id="resources-footer-main" ng-bind-html="footer">
-    
+
     </div>
         <div id="featured-footer-secondary">
             <a href="http://trove.nla.gov.au/"><img src="img/icon_logo.png"/></a>

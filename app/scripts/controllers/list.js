@@ -12,21 +12,21 @@ angular.module('trovelistsApp')
     $document.scrollTop(0);
     //this.order = $routeParams.order;
     //this.list = lists[listId];
-    $scope.displayPrevTertiary = function(){
+    $scope.displayPrevTertiary = function(event){
       var index = $scope.listitems.indexOf($scope.item)-1;
       if (index<=0){
         index = $scope.listitems.length-1;
       }
-      $scope.displayTertiary(index);
+      $scope.displayTertiary(index,event);
     }
-    $scope.displayNextTertiary = function(){
+    $scope.displayNextTertiary = function(event){
       var index = $scope.listitems.indexOf($scope.item)+1;
       if (index>=$scope.listitems.length){
         index=0;
       }
-      $scope.displayTertiary(index);
+      $scope.displayTertiary(index,event);
     }
-    $scope.displayTertiary = function(order){
+    $scope.displayTertiary = function(order,event){
       event.preventDefault();
       $scope.isloading=true;
       var item = $scope.listitems[order];
