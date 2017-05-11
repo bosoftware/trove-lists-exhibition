@@ -31,7 +31,7 @@
             <a ng-href="#/topics/{{ list.order }}"><div class="featured-grid-title">{{ list.title }}</div></a>
             <a class="featured-grid-item-numbers" ng-href="#/topics/{{ list.order }}">Browse {{ list.numberOfItems}} items</a>
             <div class="featured-grid-description">
-                <p><div ng-if="list.description" ng-bind-html="list.description | words:config.listSnippet"></div> </p>
+                <p><div ng-if="list.description" ng-bind-html="list.description"></div> </p>
             </div>
         </li>
 
@@ -42,7 +42,7 @@
 
     <div id="featured-footer">
         <div id="featured-footer-main" ng-bind-html="footer">
-          
+
         </div>
         <div id="featured-footer-secondary">
             <a href="http://trove.nla.gov.au/"><img src="img/icon_logo.png"/></a>
