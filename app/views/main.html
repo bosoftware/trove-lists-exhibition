@@ -63,7 +63,7 @@
     <div class="highSlides" ng-repeat="highimage in highlightimages">
       <div class="numbertext">{{$index+1}} / {{highlightimages.length}}</div>
       <img ng-src="{{ highimage.innerHTML }}" height="100%" width="100%">
-      <div class="highSlides-caption">{{ highlightcaptions[index].innerHTML }}</div>
+      <div class="highSlides-caption">{{highlightcaptions[$index]}}</div>
     </div>
 
   </div>

@@ -79,8 +79,15 @@ app.controller('BaseCtrl', function($scope, $document, $location,$compile) {
     $scope.listLinks = angular.element('.list-link');
     $scope.backgroundimages=$('div[id^=background-image]');
     $scope.highlightimages=$('div[id^=highlights-image]');
-    $scope.highlightcaptions=$('div[id^=highlights-caption]');
-  
+    var captions =$('div[id^=highlights-caption]');
+
+    $scope.highlightcaptions = [];
+
+    for (var i = 0; i < captions.length; i++) {
+      $scope.highlightcaptions.push(captions[i].innerHTML);
+    }
+
+
     $scope.config = window.config;
   }
 });

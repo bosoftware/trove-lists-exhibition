@@ -1,13 +1,13 @@
 @font-face {
 	font-family: 'Gilroy';
-	src: url('../fonts/Gilroy-ExtraBold.otf');
+	src: url('../fonts/gilroy-extrabold.otf');
 	font-weight: 800;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Gilroy';
-	src: url('../fonts/Gilroy-Light.otf');
+	src: url('../fonts/gilroy-light.otf');
 	font-weight: 300;
 	font-style: normal;
 }
@@ -50,10 +50,12 @@ main {
     height: 90%;
     width: 90%;
     margin-left: 5%;
-	margin-top: 55px !important;
+	margin-top: 60px !important;
+    margin-bottom: 40px !important;
     position: relative;
     margin: auto;
     object-fit:cover;
+    object-position: center;
     }
 
 @media screen and (min-width: 1025px) {
@@ -155,10 +157,9 @@ main {
     position: fixed;
     height: 480px;
     width: 80%;
-    margin:10% 0 0 10%;
+    margin:13% 0 0 10%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     background-color: #FFFFFF;
-
     -webkit-transform: translateX(1800px);
     -moz-transform: translateX(1800px);
     -ms-transform: translateX(1800px);
@@ -202,19 +203,19 @@ main {
 .popup-description-container #ex_high {
     float: right;
     width: 16%;
-    margin:80px 45px 0 0px;
-    font-size: 18pt;
+    margin:120px 70px 0 0px;
+    font-size: 25pt;
     font-family: Gilroy !important;
     font-weight: 800;
-    line-height: 25px;
+    line-height: 30px;
 }
 
 .popup-description-container #ex_high img {
     float: right;
-    margin:10px 25px 0 0;
+    margin:10px 10px 0 0;
     background-color: transparent;
-	width: 70px;
-	height: 30px;
+	width: 80px;
+	height: 40px;
 }
 
 .popup-description-container #ex_high a {
@@ -369,13 +370,9 @@ main {
 {display:none}
 
 @media screen and (max-height: 769px){
-	.highSlides img,
-	.itemSlides img
-	 {
-
-	    margin-top: 5px !important;
-
-	}
+.highSlides img, .itemSlides img
+    { margin-top: 5px !important;
+}
 #list-item-links h1 a{
 	font-size: 12px !important;
 }
@@ -391,14 +388,14 @@ main {
 }
 
 }
-.highSlides img,
-.itemSlides img
+.highSlides img, .itemSlides img
  {
     height: 380px;
     width: 65%;
     margin-left: 17.5%;
-    margin-top: 12%;
+    margin-top: 12% !important;
     object-fit:cover;
+     object-position: center;
 }
 
 /* Next & previous buttons */
@@ -440,7 +437,7 @@ main {
     font-size: 14pt;
 }
 
-/* Number text (1/5 etc) */
+/* Number text (1/10 etc) */
 .numbertext {
     color: #000000;
     padding: 8px 12px;
@@ -450,11 +447,6 @@ main {
     font-family: Gilroy;
     font-weight: 800;
     font-size: 15pt;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-    display: none;
 }
 
 
@@ -517,7 +509,7 @@ main {
     padding: 0 0;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    overflow: hidden;
+    overflow: scroll;
     /* this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied */
     -webkit-overflow-scrolling: touch;
     -webkit-transform: translateY(88%);
@@ -561,7 +553,7 @@ main {
 }
 .base-nav li:nth-child(1), .base-nav li:nth-child(1) a {
     float: left;
-    font-size: 35pt;
+    font-size: 30pt;
     font-family: Gilroy !important;
     font-weight: 800;
     text-transform: uppercase;
@@ -627,8 +619,6 @@ main {
     float: left;
     position: fixed;
     z-index: 9;
-    overflow: scroll;
-	-webkit-overflow-scrolling: touch;
 }
 
 .resources {
@@ -787,6 +777,7 @@ button {
 .resource-grid-thumbnail {
     height: 100%;
     width: 100%;
+    object-fit: cover;
 }
 
 .featured-grid .featured-grid-title {
@@ -861,7 +852,7 @@ button {
 .featured-list .featured-grid-title, .resources-list .resources-grid-title {
     position: absolute;
     height: 40px;
-    margin: -285px 0px 20px 32%;
+    margin: -275px 0px 20px 32%;
     background-color: transparent;
     color: #000000;
     width: 90%;
@@ -876,7 +867,7 @@ button {
 .featured-list .featured-grid-item-numbers {
     position: absolute;
     height: 40px;
-    margin: -250px 0px 60px 32%;
+    margin: -240px 0px 60px 32%;
     background-color: transparent;
     color: #000000;
     /*width: 28.8%;*/
@@ -889,10 +880,9 @@ button {
 .featured-list  .featured-grid-description {
 	position: absolute;
 	height: 200px;
-	margin: -205px 0px 100px 32%;
-	background-color: transparent;
+	margin: -210px 0px 100px 32%;
 	color: #000000;
-	font-size: 12pt;
+	font-size: 14pt;
 	font-family: Gilroy;
 	font-weight: 100;
 	line-height: 20px;
@@ -902,16 +892,6 @@ button {
     display: none;
 }
 
-/*
-.featured-grid-description {
-    width: 65%;
-    float: left;
-    position: absolute;
-    background-color: transparent;
-    margin: -275px 0px 20px 30%;
-    height: 270px;
-}
-*/
 .featured-grid .featured-grid-description {
     display: none;
 }
@@ -920,7 +900,7 @@ button {
 
 .resources-list .resources-grid-type {
     position: absolute;
-    margin: -255px 0px 20px 32%;
+    margin: -245px 0px 20px 32%;
     background-color: transparent;
     color: #000000;
     font-size: 20pt;
@@ -931,7 +911,7 @@ button {
 }
 .resources-list .resources-grid-year {
     position: absolute;
-    margin: -225px 0px 20px 32%;
+    margin: -215px 0px 20px 32%;
     background-color: transparent;
     color: #000000;
     font-size: 20pt;
@@ -1092,7 +1072,7 @@ button {
 .tertiary-container {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 90%;
     margin: 105px 0 0 0;
     background: #ffffff;
     z-index: 20;
@@ -1101,7 +1081,7 @@ button {
 
 .tertiary-container .tertiary-close {
     position: absolute;
-    top: 15px;
+    top: 20px;
     right: 15px;
     width: 30px;
     height: 30px;
@@ -1122,8 +1102,9 @@ button {
 
 #item-header {
     height: 150px;
-    width: 40%;
+    width: 70%;
     margin-left: 2%;
+    position: fixed;
 }
 
 #item-header h1 {
@@ -1131,7 +1112,7 @@ button {
     font-size: 30pt;
     font-weight: 800;
     line-height: 50px;
-    margin-top: 30px !important;
+    margin-top: -10px !important;
     margin-left: 0px !important;
 }
 
@@ -1140,7 +1121,7 @@ button {
     font-size: 15pt;
     font-weight: 800;
     line-height: 35px;
-    margin-top: -30px;
+    margin-top: -40px;
 }
 
 #item-header h3 {
@@ -1148,7 +1129,8 @@ button {
     font-size: 15pt;
     font-weight: 300;
     line-height: 35px;
-    margin-top: -20px;
+    margin-top: -30px;
+    margin-bottom: 20px;
 }
 
 
@@ -1156,10 +1138,9 @@ button {
 .item-slider-container {
     height: 100% !important;
     width: 90%;
-    margin: 0px 0 0 5% !important;
+    margin: 20px 0 0 5%;
     position: fixed;
 }
-
 
 /* Next & previous buttons */
 .item-prev, .item-next {
@@ -1190,7 +1171,7 @@ button {
     color: #000000;
     padding: 4px;
     /*position: absolute;*/
-    margin: 0px 0 0 17.5%;
+    margin: 10px 0 0 17.5%;
     width: 65%;
     font-family: Gilroy;
     font-weight: 300;
@@ -1201,10 +1182,11 @@ button {
 	display:table-cell;
     align-items: center; /* Vertical center alignment */
 	 justify-content: center; /* Horizontal center alignment */
-	 width: 100vw;
-	 height: 100vh;
+	 width: 60%;
  }
+
  #item-image{
+     margin-top: -100px !important;
 	   margin: 0 0 0 17.5%;
  }
 .list-item-caption {
@@ -1218,36 +1200,6 @@ button {
     font-size: 14pt;
     float: left;
 }
-.item {
-    color: #000000;
-    padding: 4px;
-    position: absolute;
-    margin: 10px 0 0 17.5%;
-    width: 75%;
-    font-family: Gilroy;
-    font-weight: 300;
-    font-size: 14pt;
-    float: left;
-}
-
-.item-caption {
-    color: #000000;
-    padding: 4px;
-    position: absolute;
-    margin: 330px 0 0 17.5%;
-    width: 65%;
-    font-family: Gilroy;
-    font-weight: 300;
-    font-size: 14pt;
-    float: left;
-}
-
-#item-links {
-    height: 100px;
-    width: 98%;
-    margin-left: 2%;
-    margin-top: 400px;
-}
 
 #list-item-links {
 	 position: fixed;
@@ -1255,7 +1207,7 @@ button {
     width: 98%;
     margin-left: 2%;
     /*margin-top: 400px;*/
-		top: 80%;
+    top: 112%;
 }
 
 #list-item-links h1 a{
@@ -1263,20 +1215,11 @@ button {
     font-size: 15pt;
     font-weight: 300;
     line-height: 35px;
-    margin-top: -30px;
+    margin-top: 0px;
     color: #609544;
 }
 
-#item-links h1 a {
-    font-family: Gilroy;
-    font-size: 15pt;
-    font-weight: 300;
-    line-height: 35px;
-    margin-top: -20px;
-    color: #609544;
-}
-#list-item-links h1 img,
-#item-links h1 img {
+#list-item-links h1 img, #item-links h1 img {
     height: 15px;
     width: 15px;
 }
@@ -1285,40 +1228,22 @@ button {
     font-size: 15pt;
     font-weight: 300;
     line-height: 35px;
-    margin-top: 0px;
+    margin-top: -30px;
 }
 
-#item-links h2 {
-    font-family: Gilroy;
-    font-size: 15pt;
-    font-weight: 300;
-    line-height: 35px;
-    margin-top: 0px;
-}
-#list-item-links h2 a,
-#item-links h2 a {
+#list-item-links h2 a, #item-links h2 a {
     color: #609544;
-}
-
-@media screen and (min-width: 1025px) {
-    .item-caption {
-    margin: 270px 0 0 17.5%;
-    }
-
-    #item-links {
-    margin-top: 350px;
-    }
 }
 /* TERTIARY ITEM LIST POPUPS */
 
 /* FOOTER FOR BOTH FEATURED AND RESOURCES */
 #featured-footer, #resources-footer {
-    height: 275px;
+    height: 200px;
     width: 100%;
     border-top: 2px solid #dedede;
     background: #FFFFFF;
     position: relative;
-    margin-top: 20px;
+    margin-top: 0px;
 	overflow: hidden;
 }
 
@@ -1355,7 +1280,7 @@ button {
 #featured-footer-secondary, #resources-footer-secondary {
     height: 50%;
     width: 40%;
-    margin-top: 3%;
+    margin-top: 6%;
     float: right;
 }
 
