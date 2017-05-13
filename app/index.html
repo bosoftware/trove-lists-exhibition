@@ -146,12 +146,15 @@
 <script src="scripts/controllers/list.js"></script>
 <script src="scripts/controllers/items.js"></script>
 <script src="scripts/controllers/item.js"></script>
-<script src="scripts/controllers/highlights.js"></script>
 <!-- endbuild -->
 
 <script src="js/featured_resource_switchcontrol.js"></script>
 <script src="js/primary_slider_main.js"></script>
 <script src="js/grid-list-view.js"></script>
-
+<script>
+  if ((navigator.userAgent.match(/OS X.*Safari/))|| (navigator.userAgent.match(/*iPad*/))&& ! navigator.userAgent.match(/Chrome/)) {
+     document.body.className += 'safari';
+  }
+</script>
 </body>
 </html>

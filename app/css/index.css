@@ -383,7 +383,7 @@ main {
 	font-size: 30pt !important;
 }
 
-#resources-footer{
+#featured-footer,#resources-footer{
 	margin-top:200px !important;
 }
 
@@ -880,6 +880,15 @@ button {
     line-height: 50px;
 }
 
+
+
+	body.safari .featured-list .featured-grid-item-numbers {
+
+	    margin: 40px 0px 60px 2% !important;
+
+
+
+}
 .featured-list  .featured-grid-description {
 	position: absolute;
 	height: 200px;
@@ -1210,7 +1219,7 @@ button {
     width: 98%;
     margin-left: 2%;
     /*margin-top: 400px;*/
-    top: 112%;
+    top: 90%;
 }
 
 #list-item-links h1 a{
