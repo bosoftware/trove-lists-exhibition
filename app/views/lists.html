@@ -50,3 +50,20 @@
         </div>
     </div>
 </div>
+<script>
+  $(document).ready(function() {
+    $('.resources').css({
+      'display': 'none',
+    });
+    $('.featured').css({
+      'display': 'inline',
+    });
+    $('.base-nav li:nth-child(2)').css({
+      'opacity': '1',
+    });
+    $('.base-nav li:nth-child(3)').css({
+      'opacity': '0.5',
+    });
+    $('.grid-trigger').attr('href','/#/');
+  });
+</script>

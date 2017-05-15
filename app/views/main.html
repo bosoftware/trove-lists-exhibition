@@ -78,4 +78,24 @@
     <script src="js/high_slideshow.js"></script>
 </div>
 </div>
+<script>
+  $(document).ready(function() {
+    $('.resources').css({
+      'display': 'none',
+    });
+    $('.featured').css({
+      'display': 'none',
+    });
+    $('.base-nav li:nth-child(2)').css({
+      'opacity': '0.5',
+    });
+    $('.base-nav li:nth-child(3)').css({
+      'opacity': '0.5',
+    });
+  if (((navigator.userAgent.match(/OS X.*Safari/))|| (navigator.userAgent.match(/iPad/))) && ! navigator.userAgent.match(/Chrome/)) {
+     document.body.className += 'safari';
+  }
+  $('.grid-trigger').attr('href','/#/topics');
+});
+</script>
 </div>
