@@ -278,7 +278,7 @@ main {
     width: 100%;
     opacity: 0;
     visibility: hidden;
-    z-index: 10;
+    z-index: 100;
     background-color: #ffffff;
 }
 
@@ -386,7 +386,9 @@ main {
 #featured-footer,#resources-footer{
 	margin-top:200px !important;
 }
-
+		.tertiary-container {
+			height: 900px !important;
+		}
 }
 .highSlides img, .itemSlides img
  {
@@ -1152,7 +1154,7 @@ button {
 
 /* Slideshow container */
 .item-slider-container {
-    height: 100% !important;
+    /*height: 100% !important;*/
     width: 90%;
     margin: 20px 0 0 5%;
     position: fixed;
@@ -1220,7 +1222,7 @@ button {
 #list-item-links {
 	 position: absolute;
     height: 100px;
-    width: 98%;
+    /*width: 5%;*/
     margin-left: 2%;
     /*margin-top: 400px;*/
     bottom: 10px;
