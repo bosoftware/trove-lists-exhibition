@@ -36,10 +36,12 @@ angular.module('trovelistsApp')
     $scope.displayTertiary = function(order,event){
       event.preventDefault();
       $scope.isloading=true;
+
       var item = $scope.listitems[order];
         $scope.item = item;
 $('#viewitemurl').attr('href',item.url);
-
+$('.itemdisplaytext').css('display', 'none');
+$('.itemdisplaytext').html('');
       //setItem(item);
       $('.popup-highlights').addClass('is-visible');
       if (item.thumbnail!=undefined){
@@ -49,11 +51,12 @@ $('#viewitemurl').attr('href',item.url);
         var downloadingImage = new Image();
         downloadingImage.onload = function() {
           image.src = this.src;
+          $('.itemdisplaytext').css('display', 'block');
         };
         downloadingImage.src = item.thumbnail;
       }else{
-$('#itemimagesrc').attr('src','#/');
-        $('#itemimagesrc').css('display','none');
+        $('#itemimagesrc').css('display', 'none');
+        $('.itemdisplaytext').css('display', 'block');
 
       }
       $('.itemtitle').html(item.title);
