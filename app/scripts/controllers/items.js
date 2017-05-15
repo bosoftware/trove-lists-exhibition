@@ -17,6 +17,13 @@ angular.module('trovelistsApp')
         $scope.totalDisplayed += 20;
       }
     };
+    $scope.closeTertiary = function(){
+      $('.popup-highlights').removeClass('is-visible');
+      $('#resources-header, #resources-secondary').css({
+          'display': 'block',});
+      $('.resources, .featured').css({
+          'overflow': 'scroll',});
+    }
     $scope.displayPrevTertiary = function(event){
       var index = $scope.item.order-1;
       if (index<=0){

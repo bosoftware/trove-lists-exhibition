@@ -12,6 +12,13 @@ angular.module('trovelistsApp')
     $document.scrollTop(0);
     //this.order = $routeParams.order;
     //this.list = lists[listId];
+    $scope.closeTertiary = function(){
+      $('.popup-highlights').removeClass('is-visible');
+      $('#resources-header, #resources-secondary').css({
+          'display': 'block',});
+      $('.resources, .featured').css({
+          'overflow': 'scroll',});
+    }
     $scope.displayPrevTertiary = function(event){
       var index = $scope.listitems.indexOf($scope.item)-1;
       if (index<=0){
