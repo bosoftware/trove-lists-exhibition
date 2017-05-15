@@ -43,10 +43,14 @@ $('#viewitemurl').attr('href',item.url);
       //setItem(item);
       $('.popup-highlights').addClass('is-visible');
       if (item.thumbnail!=undefined){
-        $('#itemimagesrc').attr('src',item.thumbnail);
-        $('#itemimagesrc').css('display','block');
-
-        //$('#item-image').attr('style',"background-image: url("+ item.thumbnail+");width: 100%;height: 100%;");
+        $('#itemimagesrc').css('display', 'block');
+        var image = $('#itemimagesrc')[0];
+        image.src = "img/loading.gif";
+        var downloadingImage = new Image();
+        downloadingImage.onload = function() {
+          image.src = this.src;
+        };
+        downloadingImage.src = item.thumbnail;
       }else{
 $('#itemimagesrc').attr('src','#/');
         $('#itemimagesrc').css('display','none');
